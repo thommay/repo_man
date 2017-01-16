@@ -1,0 +1,31 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
+    blankslate (2.1.2.4)
+    faraday (0.11.0)
+      multipart-post (>= 1.2, < 3)
+    multipart-post (2.0.0)
+    netrc (0.11.0)
+    octokit (4.6.2)
+      sawyer (~> 0.8.0, >= 0.5.3)
+    parslet (1.5.0)
+      blankslate (~> 2.0)
+    public_suffix (2.0.5)
+    sawyer (0.8.1)
+      addressable (>= 2.3.5, < 2.6)
+      faraday (~> 0.8, < 1.0)
+    toml (0.1.2)
+      parslet (~> 1.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  netrc
+  octokit
+  toml (~> 0.1)
+
+BUNDLED WITH
+   1.13.6

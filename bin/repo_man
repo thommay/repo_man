@@ -1,0 +1,98 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require "netrc"
+require "octokit"
+require "toml"
+require "pp"
+
+def github
+  @github ||= Octokit::Client.new(:netrc => true)
+end
+
+# Some ground rules:
+# We'll never rename a label
+# To do mappings, we'll create the new label, and then for each issue
+# with the old label, we'll add the new label, then remove the old one.
+def ensure_label(repository, label)
+  mappings = label.delete("mappings") {[]}
+  all = github.labels(repository)
+  current = all.select { |cur| cur[:name] == label["name"]}.first
+
+  if current.nil?
+    github.add_label(repository, label["name"], label["color"])
+    puts "Successfully added label"
+  else
+    unless current[:color] == label["color"]
+      github.update_label(repository, label["name"], color: label["color"])
+      puts "Updated color for #{label['name']}"
+    end
+  end
+
+  mappings.each do |previous|
+    next unless all.any? { |l| l[:name] == previous }
+    count = 0
+    issues_with(repository, "label", previous) do |issue|
+      puts "Updating issue #{issue}"
+      puts "Adding label: '#{label['name']}'"
+      github.add_labels_to_an_issue(repository, issue, [label["name"]])
+      puts "Removing label '#{previous}'"
+      github.remove_label(repository, issue, previous)
+      count += 1
+    end
+    # search is a bit slow, so we'll check that we deleted the number
+    # that we expected or we've got none left. Of course, if search
+    # updates while we're deleting a huge list we'll need to re-run, but
+    # that should be OK
+    remaining = issues_with(repository, "label", previous)
+    if remaining.empty? || remaining.length == count
+      puts "Deleting label '#{previous}' from #{repository}"
+      github.delete_label!(repository, previous)
+    else
+      puts "There are remaining issues returned from search - you should manually check that the '#{previous}' label has no tickets assigned (or rerun this script in a few minutes time)"
+    end
+  end
+end
+
+# Yields each issue number that has the label or milestone
+# Returns an array of all issues that have the label
+def issues_with(repository, type, label, &block)
+  query_string = "repo:#{repository} #{type}:\"#{label}\""
+  issues = github.search_issues(query_string)[:items].map { |item| item[:number] }
+
+  if block_given?
+    issues.each do |issue|
+      yield(issue)
+    end
+  end
+
+  issues
+end
+
+Octokit.auto_paginate = true
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: repo_man [options]"
+
+  opts.on("-c", "--config-file FILE", "The configuration to use") do |cfg|
+    options["config"] = cfg
+  end
+
+  opts.on("-v", "--verbose", "Make repo man verbose") do
+    options["verbose"] = true
+  end
+
+  opts.on("-h", "--help", "Prints this help") do
+    puts opts
+    exit
+  end
+end.parse!
+
+config = TOML.load_file(options["config"])
+config['repositories'].each do |repo|
+  config['label'].each do |label|
+    puts "Working on '#{label['name']}' for '#{repo}'"
+    ensure_label(repo, label)
+  end
+end

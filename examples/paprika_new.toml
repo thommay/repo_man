@@ -1,0 +1,11 @@
+repositories = ["chef/paprika"]
+
+[[label]]
+color = "CCCCCC"
+name = "Backlog"
+mappings = ["0 - Backlog"]
+
+[[label]]
+color = "CCCCCC"
+name = "Ready"
+mappings = ["1 - Ready"]

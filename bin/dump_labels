@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require "netrc"
+require "octokit"
+require "toml"
+require "pp"
+
+def github
+  @github ||= Octokit::Client.new(:netrc => true)
+end
+
+Octokit.auto_paginate = true
+
+repository = ARGV[0]
+target = ARGV[1]
+
+labels = github.labels(repository).map { |label| { name: label[:name], color: label[:color] }}
+milestones = github.list_milestones(repository).map { |ms| { name: ms[:title], description: ms[:description], due_on: ms[:due_on], state: ms[:state] }}
+
+config = {
+  repositories: [ repository ],
+  label: labels,
+}
+
+config[:milestones] = milestones unless milestones.empty?
+
+File.open(target, 'w') { |f| f.write TOML::Generator.new(config).body }

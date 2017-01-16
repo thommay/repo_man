@@ -52,6 +52,16 @@ should be idempotent in the face of failed runs.
 Running
 --------
 
+RepoMan expects you to have a configured `.netrc` file that contains an
+API token for GitHub; see https://gist.github.com/technoweenie/1072829
+for discussion. For example, mine contains:
+
+```
+machine api.github.com
+  login thommay
+  password my_api_key_for_github
+```
+
 To get the current set of labels and milestones for a repository to a
 given file, run:
 ```

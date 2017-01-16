@@ -9,3 +9,8 @@ mappings = ["0 - Backlog"]
 color = "CCCCCC"
 name = "Ready"
 mappings = ["1 - Ready"]
+
+[[milestone]]
+name = "Accepted Minor"
+description = "Some things we can do now"
+mappings = ["Minor"]

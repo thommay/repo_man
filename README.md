@@ -42,7 +42,7 @@ The config file consists of three arrays, `repositories`, `label` and `milestone
 A label may have the following keys: `name`; `color`.
 
 A milestone may have the following keys: `name`; `description`; `state`;
-and `due_on`. State will default to `open`,
+and `due_on`. `state` and `due_date` are currently unimplemented.
 
 There is a special key, `mappings`, that accepts an array of existing
 labels or milestones that should be renamed to the current one. Renaming

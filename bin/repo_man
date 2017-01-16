@@ -17,8 +17,8 @@ end
 def ensure_label(repository, label)
   mappings = label.delete("mappings") {[]}
   all = github.labels(repository)
-  current = all.select { |cur| cur[:name] == label["name"]}.first
 
+  current = all.select { |cur| cur[:name] == label["name"]}.first
   if current.nil?
     github.add_label(repository, label["name"], label["color"])
     puts "Successfully added label"
@@ -39,6 +39,7 @@ def ensure_label(repository, label)
       puts "Removing label '#{previous}'"
       github.remove_label(repository, issue, previous)
       count += 1
+      puts "-----"
     end
     # search is a bit slow, so we'll check that we deleted the number
     # that we expected or we've got none left. Of course, if search
@@ -50,6 +51,51 @@ def ensure_label(repository, label)
       github.delete_label!(repository, previous)
     else
       puts "There are remaining issues returned from search - you should manually check that the '#{previous}' label has no tickets assigned (or rerun this script in a few minutes time)"
+    end
+  end
+end
+
+# Same basic rules as for labels, but we have to edit issues to set the
+# milestone rather than updating the list of labels.
+# TODO: handle state and due_date
+def ensure_milestone(repository, milestone)
+  mappings = milestone.delete("mappings") { [] }
+  all = github.milestones(repository)
+
+  current = all.select { |cur| cur[:title] == milestone["name"]}.first
+  new = current
+
+  if current.nil?
+    new = github.create_milestone(repository, milestone["name"], description: milestone["description"])
+    puts "Successfully added milestone"
+  else
+    unless current[:title] == milestone["name"] && current[:description] == milestone["description"]
+      github.update_milestone(repository, current[:number], title: milestone["name"], description: milestone["description"])
+      puts "Updated milestone"
+    end
+  end
+
+  mappings.each do |previous|
+    next unless all.any? { |l| l[:title] == previous }
+    previous_number = all.select { |l| l[:title] == previous }.first[:number]
+
+    count = 0
+    issues_with(repository, "milestone", previous) do |issue|
+      puts "Setting milestone on issue #{issue}"
+      github.update_issue(repository, issue, milestone: new[:number])
+      count += 1
+      puts "-----"
+    end
+    # search is a bit slow, so we'll check that we deleted the number
+    # that we expected or we've got none left. Of course, if search
+    # updates while we're deleting a huge list we'll need to re-run, but
+    # that should be OK
+    remaining = issues_with(repository, "milestone", previous)
+    if remaining.empty? || remaining.length == count
+      puts "Deleting milestone '#{previous}' from #{repository}"
+      github.delete_milestone(repository, previous_number)
+    else
+      puts "There are remaining issues returned from search - you should manually check that the '#{previous}' milestone has no tickets assigned (or rerun this script in a few minutes time)"
     end
   end
 end
@@ -91,8 +137,16 @@ end.parse!
 
 config = TOML.load_file(options["config"])
 config['repositories'].each do |repo|
-  config['label'].each do |label|
-    puts "Working on '#{label['name']}' for '#{repo}'"
-    ensure_label(repo, label)
+  unless config['label'].nil?
+    config['label'].each do |label|
+      puts "Working on label '#{label['name']}' for '#{repo}'"
+      ensure_label(repo, label)
+    end
+  end
+  unless config['milestone'].nil?
+    config['milestone'].each do |milestone|
+      puts "Working on milestone '#{milestone['name']}' for '#{repo}'"
+      ensure_milestone(repo, milestone)
+    end
   end
 end

@@ -25,4 +25,10 @@ config = {
 
 config[:milestones] = milestones unless milestones.empty?
 
-File.open(target, 'w') { |f| f.write TOML::Generator.new(config).body }
+out = TOML::Generator.new(config).body
+if target
+  File.open(target, 'w') { |f| f.write out }
+else
+  require 'pp'
+  puts out
+end

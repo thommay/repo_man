@@ -15,8 +15,14 @@ end
 # To do mappings, we'll create the new label, and then for each issue
 # with the old label, we'll add the new label, then remove the old one.
 def ensure_label(repository, label)
-  mappings = label.delete("mappings") {[]}
+  mappings = label.fetch("mappings") {[]}
   all = github.labels(repository)
+
+  if label["delete"]
+    puts "Deleted label: '#{label['name']}'"
+    github.delete_label!(repository, label["name"])
+    return
+  end
 
   current = all.select { |cur| cur[:name] == label["name"]}.first
   if current.nil?
@@ -31,6 +37,7 @@ def ensure_label(repository, label)
 
   mappings.each do |previous|
     next unless all.any? { |l| l[:name] == previous }
+    puts "Working on #{previous} mapping for #{label['name']}"
     count = 0
     issues_with(repository, "label", previous) do |issue|
       puts "Updating issue #{issue}"
@@ -143,8 +150,8 @@ config['repositories'].each do |repo|
       ensure_label(repo, label)
     end
   end
-  unless config['milestone'].nil?
-    config['milestone'].each do |milestone|
+  unless config['milestones'].nil?
+    config['milestones'].each do |milestone|
       puts "Working on milestone '#{milestone['name']}' for '#{repo}'"
       ensure_milestone(repo, milestone)
     end

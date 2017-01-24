@@ -23,6 +23,11 @@ mappings = [ "defect", "error" ]
 name = "Jump In"
 color = "123456"
 
+[[label]]
+name = "An Old Label"
+delete = true
+color = "123456"
+
 [[milestone]]
 name = "Accepted Major"
 description = "Bucket for breaking changes to pull for next Major"

@@ -1,0 +1,184 @@
+repositories = [ "habitat-sh/habitat", "habitat-sh/sentinel", "habitat-sh/builder", "habitat-sh/protocols", "habitat-sh/core" ]
+
+[[label]]
+name = "A-supervisor"
+color = "87B09A"
+mappings = [ "Supervisor" ]
+
+[[label]]
+name = "A-studio"
+color = "87B09A"
+mappings = [ "Studio" ]
+
+[[label]]
+name = "A-builder"
+color = "87B09A"
+mappings = [ "Builder" ]
+
+[[label]]
+name = "A-documentation"
+color = "87B09A"
+mappings = [ "Documentation" ]
+
+[[label]]
+name = "A-cli"
+color = "87B09A"
+mappings = [ "Hab CLI" ]
+
+[[label]]
+name = "A-exporter"
+color = "87B09A"
+mappings = [ "exporters" ]
+
+[[label]]
+name = "A-launcher"
+color = "87B09A"
+mappings = [ "launcher" ]
+
+[[label]]
+name = "A-habitat.sh"
+color = "87B09A"
+mappings = [ "habitat.sh" ]
+
+[[label]]
+name = "A-plan-build"
+color = "87B09A"
+mappings = [ "Plan-Build" ]
+
+[[label]]
+name = "A-scaffolding"
+color = "87B09A"
+mappings = [ "scaffoldings" ]
+
+[[label]]
+name = "C-feature"
+color = "ff9012"
+mappings = [ "Feature", "enhancement" ]
+
+[[label]]
+name = "C-bug"
+color = "ff9012"
+mappings = [ "Bug", "bug" ]
+
+[[label]]
+name = "C-chore"
+color = "ff9012"
+mappings = [ "Chore" ]
+
+[[label]]
+name = "C-critical"
+color = "ff9012"
+mappings = [ "Critical" ]
+
+[[label]]
+name = "C-release"
+color = "ff9012"
+mappings = [ "Release" ]
+
+[[label]]
+name = "C-RFC"
+color = "ff9012"
+
+[[label]]
+name = "E-easy"
+color = "4296b4"
+mappings = [ "Easy" ]
+
+[[label]]
+name = "E-less-easy"
+color = "4296b4"
+
+[[label]]
+name = "E-hard"
+color = "4296b4"
+
+[[label]]
+name = "E-mentored"
+color = "4296b4"
+
+[[label]]
+name = "E-epic"
+color = "4296b4"
+mappings = [ "E-helldive", "Epic" ]
+
+[[label]]
+name = "L-rust"
+color = "5c6670"
+
+[[label]]
+name = "L-html-css"
+color = "5c6670"
+
+[[label]]
+name = "L-javascript"
+color = "5c6670"
+
+[[label]]
+name = "L-shell"
+color = "5c6670"
+
+[[label]]
+name = "S-awaiting-review"
+color = "EB6852"
+mappings = [ "Ready" ]
+
+[[label]]
+name = "S-needs-discussion"
+color = "EB6852"
+mappings = [ "Discussing" ]
+
+[[label]]
+name = "T-DO-NOT-MERGE"
+color = "d62f3f"
+mappings = [ "S-DO-NOT-MERGE" ]
+
+[[label]]
+name = "T-stability"
+color = "d62f3f"
+mappings = [ "STABILITY" ]
+
+[[label]]
+name = "T-breaking"
+color = "d62f3f"
+mappings = [ "C-breaking" ]
+
+[[label]]
+name = "P-1"
+color = "3257bc"
+mappings = [ "C-critical" ]
+
+[[label]]
+name = "P-2"
+color = "3257bc"
+mappings = [ "C-breaking" ]
+
+[[label]]
+name = "P-3"
+color = "3257bc"
+
+[[label]]
+name = "I-linux"
+color = "c3c6c8"
+mappings = [ "P-linux" ]
+
+[[label]]
+name = "I-macOS"
+color = "c3c6c8"
+mappings = [ "P-macOS" ]
+
+[[label]]
+name = "I-windows"
+color = "c3c6c8"
+mappings = [ "P-windows" ]
+
+[[label]]
+name = "V-devx"
+color = "0fb0bf"
+
+[[label]]
+name = "V-bldr"
+color = "0fb0bf"
+
+[[label]]
+name = "V-sup"
+color = "0fb0bf"

@@ -170,3 +170,15 @@ mappings = [ "P-macOS" ]
 name = "I-windows"
 color = "c3c6c8"
 mappings = [ "P-windows" ]
+
+[[label]]
+name = "V-devx"
+color = "0fb0bf"
+
+[[label]]
+name = "V-bldr"
+color = "0fb0bf"
+
+[[label]]
+name = "V-sup"
+color = "0fb0bf"

@@ -75,7 +75,7 @@ mappings = ["High Priority"]
 [[label]]
 color = "0052cc"
 name = "Status: Incomplete"
-mappings = ["Incomplete Contribution"]
+mappings = ["Incomplete Contribution", "Developing"]
 
 [[label]]
 color = "eb6420"

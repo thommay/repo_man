@@ -32,7 +32,7 @@ mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wante
 [[label]]
 color = "009800"
 name = "Type: Enhancement"
-mappings = ["Enhancement", "enhancement", "Improvement", "New Feature", "Feature"]
+mappings = ["Enhancement", "enhancement", "Improvement", "New Feature", "Feature", "Feature Request"]
 
 [[label]]
 color = "0052cc"
@@ -95,6 +95,14 @@ mappings = ["Regression"]
 [[label]]
 delete = true
 name = "CLA Verified"
+
+[[label]]
+delete = true
+name = "General"
+
+[[label]]
+delete = true
+name = "Help"
 
 [[label]]
 delete = true

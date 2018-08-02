@@ -16,7 +16,7 @@ repositories = [
 
 [[label]]
 color = "e11d21"
-mappings = [ "Bug", "bug" ]
+mappings = [ "Bug", "bug", "Bug Fix" ]
 name = "Type: Bug"
 
 [[label]]
@@ -42,7 +42,7 @@ mappings = [ "duplicate", "Duplicate" ]
 [[label]]
 color = "bfd4f2"
 name = "Expeditor: Exclude From Changelog"
-mappings = ["Changelog: Skip Update"]
+mappings = ["Changelog: Skip Update", "Exclude From Changelog"]
 
 [[label]]
 color = "bfd4f2"
@@ -75,7 +75,7 @@ mappings = ["High Priority"]
 [[label]]
 color = "0052cc"
 name = "Status: Incomplete"
-mappings = ["Incomplete Contribution"]
+mappings = ["Incomplete Contribution", "in progress"]
 
 [[label]]
 color = "eb6420"
@@ -147,11 +147,12 @@ delete = true
 [[label]]
 color = "0052cc"
 name = "Status: Confirmed"
+mappings = ["Triaged"]
 
 [[label]]
 color = "0052cc"
 name = "Status: Pending Contributor Response"
-mappings = ["Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse"]
+mappings = ["Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse", "Waiting on Contributor"]
 
 [[milestones]]
 description = "Bucket to pull issues from for next minor. These issues should be fixable without needing a *major* version bump per semver; they're unlikely to cause a compatibility break or an API change."

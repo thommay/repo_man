@@ -158,6 +158,11 @@ delete = true
 
 [[label]]
 color = "0052cc"
+name = "Status: Won't Fix"
+mappings = ["wontfix"]
+
+[[label]]
+color = "0052cc"
 name = "Status: Confirmed"
 mappings = ["Triaged"]
 

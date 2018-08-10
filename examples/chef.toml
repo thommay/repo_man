@@ -98,6 +98,10 @@ name = "CLA Verified"
 
 [[label]]
 delete = true
+name = "Signed CLA"
+
+[[label]]
+delete = true
 name = "General"
 
 [[label]]

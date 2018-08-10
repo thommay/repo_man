@@ -1,18 +1,18 @@
 repositories = [
+                "chef/chef", "chef/ohai", "chef/cheffish", "chef/chef-zero", "chef/chefstyle", "chef/welcome_bot", "chef/cookstyle", "chef/chef-dk", "chef/jump-in",
                 "chef/win32-service", "chef/win32-eventlog", "chef/win32-taskscheduler", "chef/win32-process", "chef/win32-security",
                 "chef/win32-file", "chef/win32-dir", "chef/win32-changejournal", "chef/win32-pipe", "chef/win32-sound", "chef/win32-file-security",
                 "chef/win32-ipc", "chef/win32-clipboard", "chef/pr-win32ole", "chef/win32-file-stat", "chef/win32-shortcut", "chef/win32-certstore",
                 "chef/win32-sapi", "chef/win32-ole", "chef/win32-mmap", "chef/win32-event", "chef/win32-nio", "chef/win32-changenotify", "chef/win32-file-attributes",
                 "chef/win32-job", "chef/win32-mutex", "chef/win32-socket", "chef/win32-mailslot", "chef/ffi-win32-extensions", "chef/win32-semaphore",
                 "chef/win32-dirmonitor", "chef/mixlib-cli", "chef/mixlib-log", "chef/mixlib-config", "chef/mixlib-authentication",
-                "chef/mixlib-shellout", "chef/mixlib-versioning", "chef/mixlib-archive", "chef/ohai", "chef/cheffish", "chef/chef-zero", "chef/chefstyle",
-                "chef/knife-ec2", "chef/knife-rackspace", "chef/knife-openstack", "chef/knife-azure", "chef/knife-windows", "chef/knife-google",
-                "chef/knife-linode", "chef/knife-push", "chef/knife-opc", "chef/knife-acl", "chef/knife-cloud", "chef/knife-reporting", "chef/knife-ec-backup",
-                "chef/knife-kvm", "chef/knife-analytics", "chef/knife-ecs", "chef/knife-vcenter", "chef/knife-lpar", "chef/kitchen-appbundle-updater",
-                "chef/kitchen-vcenter", "chef/chef-provisioning", "chef/chef-provisioning-aws", "chef/chef-provisioning-fog", "chef/chef-provisioning-ssh",
-                "chef/chef-provisioning-central", "chef/chef-vault", "chef/chef-ruby-lvm", "chef/chef-ruby-lvm-attrib", "chef/ffi-libarchive", "chef/welcome_bot",
-                "chef/chocolatey-packages", "chef/homebrew-chef", "chef/cookstyle", "chef/ffi-yajl", "chef/libyajl2-gem", "chef/vagrant-omnibus", "chef/appbundler",
-                "chef/rs-chef-api", "jump-in"]
+                "chef/mixlib-shellout", "chef/mixlib-versioning", "chef/mixlib-archive", "chef/knife-ec2", "chef/knife-rackspace", "chef/knife-openstack",
+                "chef/knife-azure", "chef/knife-windows", "chef/knife-google", "chef/knife-linode", "chef/knife-push", "chef/knife-opc", "chef/knife-acl",
+                "chef/knife-cloud", "chef/knife-reporting", "chef/knife-ec-backup", "chef/knife-kvm", "chef/knife-analytics", "chef/knife-ecs", "chef/knife-vcenter",
+                "chef/knife-lpar", "chef/kitchen-appbundle-updater", "chef/kitchen-vcenter", "chef/chef-provisioning", "chef/chef-provisioning-aws",
+                "chef/chef-provisioning-fog", "chef/chef-provisioning-ssh", "chef/chef-provisioning-central", "chef/chef-vault", "chef/chef-ruby-lvm",
+                "chef/chef-ruby-lvm-attrib", "chef/ffi-libarchive", "chef/chocolatey-packages", "chef/homebrew-chef", "chef/ffi-yajl", "chef/libyajl2-gem",
+                "chef/vagrant-omnibus", "chef/appbundler", "chef/rs-chef-api", "chef/omnibus", "chef/appbundle-updater" ]
 
 [[label]]
 color = "e11d21"

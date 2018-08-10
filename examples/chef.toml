@@ -27,7 +27,7 @@ mappings = ["Documentation", "documentation"]
 [[label]]
 color = "bfe5bf"
 name = "Type: Jump In"
-mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted"]
+mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted", "Jump In"]
 
 [[label]]
 color = "009800"

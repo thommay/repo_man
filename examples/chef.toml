@@ -12,7 +12,8 @@ repositories = [
                 "chef/knife-lpar", "chef/kitchen-appbundle-updater", "chef/kitchen-vcenter", "chef/chef-provisioning", "chef/chef-provisioning-aws",
                 "chef/chef-provisioning-fog", "chef/chef-provisioning-ssh", "chef/chef-provisioning-central", "chef/chef-vault", "chef/chef-ruby-lvm",
                 "chef/chef-ruby-lvm-attrib", "chef/ffi-libarchive", "chef/chocolatey-packages", "chef/homebrew-chef", "chef/ffi-yajl", "chef/libyajl2-gem",
-                "chef/vagrant-omnibus", "chef/appbundler", "chef/rs-chef-api", "chef/omnibus", "chef/appbundle-updater" ]
+                "chef/vagrant-omnibus", "chef/appbundler", "chef/rs-chef-api", "chef/omnibus", "chef/appbundle-updater", "chef/opscode-pushy-client",
+                "chef/omnibus-software"]]
 
 [[label]]
 color = "e11d21"

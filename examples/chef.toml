@@ -102,6 +102,10 @@ name = "Signed CLA"
 
 [[label]]
 delete = true
+name = "CLA Needed"
+
+[[label]]
+delete = true
 name = "General"
 
 [[label]]

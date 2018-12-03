@@ -14,7 +14,7 @@ repositories = [
                 "chef/chef-ruby-lvm-attrib", "chef/ffi-libarchive", "chef/chocolatey-packages", "chef/homebrew-chef", "chef/ffi-yajl", "chef/libyajl2-gem",
                 "chef/vagrant-omnibus", "chef/appbundler", "chef/rs-chef-api", "chef/omnibus", "chef/appbundle-updater", "chef/opscode-pushy-client",
                 "chef/omnibus-software", "chef/chef-workstation", "chef/chef-apply", "chef/chef-manage", "chef/mixlib-install", "chef/mixlib-platform",
-                "chef/opscode-pushy-server" ]
+                "chef/opscode-pushy-server", "chef/mixlib-platform" ]
 
 [[label]]
 color = "e11d21"

@@ -14,7 +14,9 @@ repositories = [
                 "chef/chef-ruby-lvm-attrib", "chef/ffi-libarchive", "chef/chocolatey-packages", "chef/homebrew-chef", "chef/ffi-yajl", "chef/libyajl2-gem",
                 "chef/vagrant-omnibus", "chef/appbundler", "chef/rs-chef-api", "chef/omnibus", "chef/appbundle-updater", "chef/opscode-pushy-client",
                 "chef/omnibus-software", "chef/chef-workstation", "chef/chef-apply", "chef/chef-manage", "chef/mixlib-install", "chef/mixlib-platform",
-                "chef/opscode-pushy-server", "chef/mixlib-platform", "chef/knife-vsphere"]
+                "chef/opscode-pushy-server", "chef/mixlib-platform", "chef/knife-vsphere", "chef/omnitruck", "chef/bento-ya", "chef/artifactory-client",
+                "chef/knife-ec-backup", "chef/knife-tidy", "chef/bft", "chef/kitchen-wpar", "chef/oss_project_boilerplate", "chef/dep-selector-libgecode"
+                "chef/wmi-lite", "chef/dcob", "chef/community-summits", "chef/folsom_graphite", "chef/stats_hero" ]
 
 [[label]]
 color = "e11d21"
@@ -77,7 +79,7 @@ mappings = ["High Priority"]
 [[label]]
 color = "0052cc"
 name = "Status: Incomplete"
-mappings = ["Incomplete Contribution", "in progress"]
+mappings = ["Incomplete Contribution", "in progress", "Do Not Merge"]
 
 [[label]]
 color = "eb6420"
@@ -172,6 +174,10 @@ delete = true
 
 [[label]]
 name = "good first issue"
+delete = true
+
+[[label]]
+name = "Reviewed"
 delete = true
 
 [[label]]

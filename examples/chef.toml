@@ -15,7 +15,7 @@ repositories = [
                 "chef/vagrant-omnibus", "chef/appbundler", "chef/rs-chef-api", "chef/omnibus", "chef/appbundle-updater", "chef/opscode-pushy-client",
                 "chef/omnibus-software", "chef/chef-workstation", "chef/chef-apply", "chef/chef-manage", "chef/mixlib-install", "chef/mixlib-platform",
                 "chef/opscode-pushy-server", "chef/mixlib-platform", "chef/knife-vsphere", "chef/omnitruck", "chef/bento-ya", "chef/artifactory-client",
-                "chef/knife-ec-backup", "chef/knife-tidy", "chef/bft", "chef/kitchen-wpar", "chef/oss_project_boilerplate", "chef/dep-selector-libgecode"
+                "chef/knife-ec-backup", "chef/knife-tidy", "chef/bft", "chef/kitchen-wpar", "chef/oss_project_boilerplate", "chef/dep-selector-libgecode",
                 "chef/wmi-lite", "chef/dcob", "chef/community-summits", "chef/folsom_graphite", "chef/stats_hero" ]
 
 [[label]]

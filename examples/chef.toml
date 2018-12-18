@@ -14,7 +14,7 @@ repositories = [
                 "chef/chef-ruby-lvm-attrib", "chef/ffi-libarchive", "chef/chocolatey-packages", "chef/homebrew-chef", "chef/ffi-yajl", "chef/libyajl2-gem",
                 "chef/vagrant-omnibus", "chef/appbundler", "chef/rs-chef-api", "chef/omnibus", "chef/appbundle-updater", "chef/opscode-pushy-client",
                 "chef/omnibus-software", "chef/chef-workstation", "chef/chef-apply", "chef/chef-manage", "chef/mixlib-install", "chef/mixlib-platform",
-                "chef/opscode-pushy-server", "chef/mixlib-platform" ]
+                "chef/opscode-pushy-server", "chef/mixlib-platform", "chef/knife-vsphere"]
 
 [[label]]
 color = "e11d21"
@@ -29,7 +29,7 @@ mappings = ["Documentation", "documentation"]
 [[label]]
 color = "bfe5bf"
 name = "Type: Jump In"
-mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted", "Jump In"]
+mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted", "Jump In", "good first issue"]
 
 [[label]]
 color = "009800"
@@ -167,6 +167,14 @@ name = "Needs Action"
 delete = true
 
 [[label]]
+name = "Waiting on Feedback"
+delete = true
+
+[[label]]
+name = "good first issue"
+delete = true
+
+[[label]]
 color = "0052cc"
 name = "Status: Won't Fix"
 mappings = ["wontfix"]
@@ -179,7 +187,7 @@ mappings = ["Triaged"]
 [[label]]
 color = "0052cc"
 name = "Status: Pending Contributor Response"
-mappings = ["Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse", "Waiting on Contributor"]
+mappings = ["Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse", "Waiting on Contributor", "Waiting on Feedback"]
 
 [[milestones]]
 description = "Bucket to pull issues from for next minor. These issues should be fixable without needing a *major* version bump per semver; they're unlikely to cause a compatibility break or an API change."

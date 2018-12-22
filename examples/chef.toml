@@ -18,35 +18,55 @@ repositories = [
                 "chef/knife-ec-backup", "chef/knife-tidy", "chef/bft", "chef/kitchen-wpar", "chef/oss_project_boilerplate", "chef/dep-selector-libgecode",
                 "chef/wmi-lite", "chef/dcob", "chef/community-summits", "chef/folsom_graphite", "chef/stats_hero" ]
 
-[[label]]
-color = "e11d21"
-mappings = [ "Bug", "bug", "Bug Fix" ]
-name = "Type: Bug"
+### Aspects
 
 [[label]]
-color = "c7def8"
-name = "Type: Documentation"
-mappings = ["Documentation", "documentation"]
+color = "d4c5f9"
+name = "Aspect: Correctness"
 
 [[label]]
-color = "bfe5bf"
-name = "Type: Jump In"
-mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted", "Jump In", "good first issue"]
+color = "d4c5f9"
+name = "Aspect: Integration"
 
 [[label]]
-color = "009800"
-name = "Type: Enhancement"
-mappings = ["Enhancement", "enhancement", "Improvement", "New Feature", "Feature", "Feature Request"]
+color = "d4c5f9"
+name = "Aspect: Packaging"
 
 [[label]]
-color = "0052cc"
-name = "Status: Duplicate"
-mappings = [ "duplicate", "Duplicate" ]
+color = "d4c5f9"
+name = "Aspect: Performance"
+
+[[label]]
+color = "d4c5f9"
+name = "Aspect: Portability"
+
+[[label]]
+color = "d4c5f9"
+name = "Aspect: Security"
+
+[[label]]
+color = "d4c5f9"
+name = "Aspect: Stability"
+
+[[label]]
+color = "d4c5f9"
+name = "Aspect: Testing"
+
+[[label]]
+color = "d4c5f9"
+name = "Aspect: UX"
+
+[[label]]
+color = "d4c5f9"
+name = "Aspect: Documentation"
+mappings = ["Documentation", "documentation", "Type: Documentation"]
+
+### Expeditor
 
 [[label]]
 color = "bfd4f2"
-name = "Expeditor: Exclude From Changelog"
-mappings = ["Changelog: Skip Update", "Exclude From Changelog"]
+name = "Expeditor: Skip Changelog"
+mappings = ["Changelog: Skip Update", "Exclude From Changelog", "Expeditor: Exclude From Changelog"]
 
 [[label]]
 color = "bfd4f2"
@@ -54,7 +74,12 @@ name = "Expeditor: Skip All"
 
 [[label]]
 color = "bfd4f2"
-name = "Expeditor: Skip Build"
+name = "Expeditor: Skip Habitat"
+
+[[label]]
+color = "bfd4f2"
+name = "Expeditor: Skip Omnibus"
+mappings = ["Expeditor: Skip Build"]
 
 [[label]]
 color = "bfd4f2"
@@ -63,13 +88,164 @@ mappings = ["Version: Skip Bump"]
 
 [[label]]
 color = "bfd4f2"
-name = "Expeditor: Bump Minor Version"
-mappings = ["Version: Bump Minor"]
+name = "Expeditor: Bump Version Minor"
+mappings = ["Expeditor: Bump Minor Version"]
+
+### Help
+
+[[label]]
+color = "d34a00"
+name = "Help: Good First Issue"
+mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted", "Jump In", "good first issue", "Type: Jump In"]
+
+[[label]]
+color = "d34a00"
+name = "Help: Help Wanted"
+
+
+### Platform
+
+[[label]]
+color = "a2c429"
+name = "Platform: AWS"
+
+[[label]]
+color = "a2c429"
+name = "Platform: Azure"
+
+[[label]]
+color = "a2c429"
+name = "Platform: Docker"
+
+[[label]]
+color = "a2c429"
+name = "Platform: GCP"
+
+[[label]]
+color = "a2c429"
+name = "Platform: Linux"
+
+[[label]]
+color = "a2c429"
+name = "Platform: macOS"
+mappings = ["Area: Mac"]
+
+[[label]]
+color = "a2c429"
+name = "Platform: RHEL-like"
+mappings = ["Area: Enterprise Linux"]
+
+[[label]]
+color = "a2c429"
+name = "Platform: Debian-like"
+mappings = ["Area: Ubuntu"]
+
+[[label]]
+color = "a2c429"
+name = "Platform: VMware"
+
+[[label]]
+color = "a2c429"
+name = "Platform: Unix-like"
+mappings = ["Area: SmartOS", "Area: Solaris", "Area: BSD", "Area: AIX"]
+
+[[label]]
+color = "a2c429"
+name = "Platform: Windows"
+mappings = ["Area: Windows"]
+
+### Status
 
 [[label]]
 color = "0052cc"
-name = "Status: Finish for Merge"
-mappings = ["Finish for Merge"]
+name = "Status: Adopted"
+
+[[label]]
+color = "0052cc"
+name = "Status: Needs Adoption"
+mappings = ["Finish for Merge", "Status: Finish for Merge"]
+
+color = "0052cc"
+name = "Status: Incomplete"
+mappings = ["Incomplete Contribution", "in progress", "Do Not Merge"]
+
+### Triage
+
+[[label]]
+color = "f49866"
+name = "Triage: Support"
+
+[[label]]
+color = "f49866"
+name = "Triage: Not Reproducible"
+
+[[label]]
+color = "f49866"
+name = "Triage: Confirmed"
+mappings = ["Triaged", "Status: Confirmed"]
+
+[[label]]
+color = "f49866"
+name = "Triage: Needs Information"
+mappings = ["Status: Pending Contributor Response", "Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse", "Waiting on Contributor", "Waiting on Feedback"]
+
+[[label]]
+color = "f49866"
+name = "Triage: Declined"
+mappings = ["wontfix", "Status: Won't Fix"]
+
+[[label]]
+color = "f49866"
+name = "Triage: Duplicate"
+mappings = [ "duplicate", "Duplicate", "Status: Duplicate" ]
+
+### Type
+
+[[label]]
+color = "bfe5bf"
+name = "Type: Chore"
+
+[[label]]
+color = "bfe5bf"
+name = "Type: Breaking Change"
+
+[[label]]
+color = "bfe5bf"
+name = "Type: Deprecation"
+
+[[label]]
+color = "bfe5bf"
+name = "Type: Question"
+
+[[label]]
+color = "bfe5bf"
+name = "Type: Tech Debt"
+
+[[label]]
+color = "bfe5bf"
+name = "Type: Regression"
+mappings = ["Regression"]
+
+[[label]]
+color = "bfe5bf"
+mappings = [ "Bug", "bug", "Bug Fix" ]
+name = "Type: Bug"
+
+[[label]]
+color = "bfe5bf"
+name = "Type: Enhancement"
+mappings = ["Enhancement", "enhancement", "Improvement", "New Feature", "Feature"]
+
+[[label]]
+color = "bfe5bf"
+name = "Type: Feature Request"
+mappings = ["Feature Request"]
+
+color = "bfe5bf"
+name = "Type: Regression"
+mappings = ["Regression"]
+
+### Priority
 
 [[label]]
 color = "eb6420"
@@ -77,24 +253,16 @@ name = "Priority: Critical"
 mappings = ["High Priority"]
 
 [[label]]
-color = "0052cc"
-name = "Status: Incomplete"
-mappings = ["Incomplete Contribution", "in progress", "Do Not Merge"]
+color = "eb6420"
+name = "Priority: Medium"
+mappings = ["Medium Priority"]
 
 [[label]]
 color = "eb6420"
 name = "Priority: Low"
 mappings = ["Low Priority"]
 
-[[label]]
-color = "eb6420"
-name = "Priority: Medium"
-mappings = ["Medium Priority"]
-
-[[label]]
-color = "e11d21"
-name = "Type: Regression"
-mappings = ["Regression"]
+### Old labels to delete
 
 [[label]]
 delete = true
@@ -137,10 +305,6 @@ delete = true
 name = "Signed CLA"
 
 [[label]]
-name = "wontfix"
-delete = true
-
-[[label]]
 name = "invalid"
 delete = true
 
@@ -179,43 +343,3 @@ delete = true
 [[label]]
 name = "Reviewed"
 delete = true
-
-[[label]]
-color = "0052cc"
-name = "Status: Won't Fix"
-mappings = ["wontfix"]
-
-[[label]]
-color = "0052cc"
-name = "Status: Confirmed"
-mappings = ["Triaged"]
-
-[[label]]
-color = "0052cc"
-name = "Status: Pending Contributor Response"
-mappings = ["Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse", "Waiting on Contributor", "Waiting on Feedback"]
-
-[[milestones]]
-description = "Bucket to pull issues from for next minor. These issues should be fixable without needing a *major* version bump per semver; they're unlikely to cause a compatibility break or an API change."
-name = "Accepted Minor"
-state = "open"
-
-[[milestones]]
-description = "Bucket for breaking changes to pull for next Major"
-name = "Accepted Major"
-state = "open"
-
-[[milestones]]
-description = "Triaged issues that are low priority and are not being worked on."
-name = "Help Wanted"
-state = "open"
-
-[[milestones]]
-description = "Documentation updates and fixes"
-name = "Documentation"
-state = "open"
-
-[[milestones]]
-description = "Bucket for issues that are discussions or bikesheds and which are not yet directly actionable but also not yet closable, and are not appropriate to assign to either a major or minor release milestone.\r\n"
-name = "Discussion"
-state = "open"

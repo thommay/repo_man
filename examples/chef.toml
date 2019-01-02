@@ -31,10 +31,12 @@ name = "Aspect: Integration"
 [[label]]
 color = "d4c5f9"
 name = "Aspect: Packaging"
+mappings = ["Area: Packaging"]
 
 [[label]]
 color = "d4c5f9"
 name = "Aspect: Performance"
+mappings = ["Type: Performance"]
 
 [[label]]
 color = "d4c5f9"
@@ -55,6 +57,11 @@ name = "Aspect: Testing"
 [[label]]
 color = "d4c5f9"
 name = "Aspect: UX"
+mappings = ["Type: Delight Blocker"]
+
+[[label]]
+color = "d4c5f9"
+name = "Aspect: UI"
 
 [[label]]
 color = "d4c5f9"
@@ -101,7 +108,6 @@ mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wante
 [[label]]
 color = "d34a00"
 name = "Help: Help Wanted"
-
 
 ### Platform
 
@@ -169,6 +175,9 @@ color = "0052cc"
 name = "Status: Incomplete"
 mappings = ["Incomplete Contribution", "in progress", "Do Not Merge"]
 
+color = "0052cc"
+name = "Status: Waiting on Contributor"
+
 ### Triage
 
 [[label]]
@@ -220,6 +229,7 @@ name = "Type: Question"
 [[label]]
 color = "bfe5bf"
 name = "Type: Tech Debt"
+mappings = ["Tech Cleanup"]
 
 [[label]]
 color = "bfe5bf"
@@ -234,12 +244,12 @@ name = "Type: Bug"
 [[label]]
 color = "bfe5bf"
 name = "Type: Enhancement"
-mappings = ["Enhancement", "enhancement", "Improvement", "New Feature", "Feature"]
+mappings = ["Enhancement", "enhancement", "Improvement"]
 
 [[label]]
 color = "bfe5bf"
 name = "Type: Feature Request"
-mappings = ["Feature Request"]
+mappings = ["Feature Request", "New Feature", "Feature"]
 
 color = "bfe5bf"
 name = "Type: Regression"
@@ -317,10 +327,6 @@ name = "Attack List"
 delete = true
 
 [[label]]
-name = "Tech Cleanup"
-delete = true
-
-[[label]]
 name = "Discussion"
 delete = true
 
@@ -333,7 +339,55 @@ name = "Needs Action"
 delete = true
 
 [[label]]
+name = "Area: AIX"
+delete = true
+
+[[label]]
+name = "Area: BSD"
+delete = true
+
+[[label]]
+name = "Area: Ubuntu"
+delete = true
+
+[[label]]
+name = "Area: Solaris"
+delete = true
+
+[[label]]
+name = "Area: Solaris"
+delete = true
+
+[[label]]
+name = "Area: Mac"
+delete = true
+
+[[label]]
+name = "Area: Windows"
+delete = true
+
+[[label]]
+name = "Area: Enterprise Linux"
+delete = true
+
+[[label]]
 name = "Waiting on Feedback"
+delete = true
+
+[[label]]
+name = "Type: Performance"
+delete = true
+
+[[label]]
+name = "Type: Retest for Status "
+delete = true
+
+[[label]]
+name = "Area: Packaging"
+delete = true
+
+[[label]]
+name = "Type: Delight Blocker"
 delete = true
 
 [[label]]

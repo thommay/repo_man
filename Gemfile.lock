@@ -18,6 +18,9 @@ GEM
       faraday (~> 0.8, < 1.0)
     toml (0.2.0)
       parslet (~> 1.8.0)
+    tty-cursor (0.6.0)
+    tty-spinner (0.9.0)
+      tty-cursor (~> 0.6.0)
 
 PLATFORMS
   ruby
@@ -27,6 +30,7 @@ DEPENDENCIES
   netrc
   octokit
   toml (~> 0.1)
+  tty-spinner
 
 BUNDLED WITH
    1.17.3

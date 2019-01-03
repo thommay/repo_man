@@ -6,6 +6,7 @@ require "octokit"
 require "toml"
 require "pp"
 require "faraday-http-cache"
+require "tty-spinner"
 
 def github
   @github ||= begin
@@ -134,12 +135,13 @@ def issues_with(repository, type, label, &block)
   issues
 end
 
+# rescues github timeouts so we can wait and try again
 def ensure_with_retries(type, repo, object)
   send("ensure_#{type}".to_sym, repo, object)
 rescue Octokit::TooManyRequests
-  time_until_limit_over = github.rate_limit['resets_in'] + 5 # 5 more to be safe
-  puts "  GitHub API limit reached! Waiting #{time_until_limit_over} seconds before making the next request"
-  sleep time_until_limit_over
+  time_until_limit_over = github.rate_limit["resets_in"] + 5 # 5 more to be safe
+  decorator = TTY::Spinner.new("  :spinner GitHub API limit reached! Waiting #{time_until_limit_over} seconds before making the next request", format: :spin)
+  decorator.run { sleep time_until_limit_over }
   retry
 end
 

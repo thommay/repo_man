@@ -45,6 +45,7 @@ name = "Aspect: Portability"
 [[label]]
 color = "d4c5f9"
 name = "Aspect: Security"
+mappings = ["Security"]
 
 [[label]]
 color = "d4c5f9"
@@ -201,7 +202,7 @@ mappings = ["Status: Pending Contributor Response", "Waiting for Contributor Res
 [[label]]
 color = "f49866"
 name = "Triage: Declined"
-mappings = ["wontfix", "Status: Won't Fix"]
+mappings = ["wontfix", "Status: Won't Fix", "Won't Fix"]
 
 [[label]]
 color = "f49866"
@@ -225,11 +226,12 @@ name = "Type: Deprecation"
 [[label]]
 color = "bfe5bf"
 name = "Type: Question"
+mappings = ["question"]
 
 [[label]]
 color = "bfe5bf"
 name = "Type: Tech Debt"
-mappings = ["Tech Cleanup"]
+mappings = ["Tech Cleanup", "Debt"]
 
 [[label]]
 color = "bfe5bf"
@@ -277,10 +279,6 @@ mappings = ["Low Priority"]
 [[label]]
 delete = true
 name = "CLA Verified"
-
-[[label]]
-delete = true
-name = "Signed CLA"
 
 [[label]]
 delete = true
@@ -396,6 +394,46 @@ delete = true
 
 [[label]]
 name = "Reviewed"
+delete = true
+
+[[label]]
+name = "Security"
+delete = true
+
+[[label]]
+name = "Version: Skip Bump"
+delete = true
+
+[[label]]
+name = "wontfix"
+delete = true
+
+[[label]]
+name = "question"
+delete = true
+
+[[label]]
+name = "enhancement"
+delete = true
+
+[[label]]
+name = "duplicate"
+delete = true
+
+[[label]]
+name = "Review Required"
+delete = true
+
+[[label]]
+name = "bug"
+delete = true
+
+[[label]]
+name = "New Feature"
+delete = true
+
+[[label]]
+name = "No_Changelog"
 delete = true
 
 [[label]]

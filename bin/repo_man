@@ -19,19 +19,18 @@ def ensure_label(repository, label)
   all = github.labels(repository)
 
   if label["delete"]
-    puts "Deleted label: '#{label['name']}'"
-    github.delete_label!(repository, label["name"])
+    puts "  Deleted label: '#{label['name']}'" if github.delete_label!(repository, label["name"])
     return
   end
 
   current = all.select { |cur| cur[:name] == label["name"]}.first
   if current.nil?
     github.add_label(repository, label["name"], label["color"])
-    puts "Successfully added label"
+    puts "  Successfully added label"
   else
     unless current[:color] == label["color"]
       github.update_label(repository, label["name"], color: label["color"])
-      puts "Updated color for #{label['name']}"
+      puts "  Updated color for #{label['name']}"
     end
   end
 
@@ -40,10 +39,10 @@ def ensure_label(repository, label)
     puts "Working on #{previous} mapping for #{label['name']}"
     count = 0
     issues_with(repository, "label", previous) do |issue|
-      puts "Updating issue #{issue}"
-      puts "Adding label: '#{label['name']}'"
+      puts "  Updating issue #{issue}"
+      puts "  Adding label: '#{label['name']}'"
       github.add_labels_to_an_issue(repository, issue, [label["name"]])
-      puts "Removing label '#{previous}'"
+      puts "  Removing label '#{previous}'"
       github.remove_label(repository, issue, previous)
       count += 1
       puts "-----"
@@ -54,7 +53,7 @@ def ensure_label(repository, label)
     # that should be OK
     remaining = issues_with(repository, "label", previous)
     if remaining.empty? || remaining.length == count
-      puts "Deleting label '#{previous}' from #{repository}"
+      puts "  Deleting label '#{previous}' from #{repository}"
       github.delete_label!(repository, previous)
     else
       puts "There are remaining issues returned from search - you should manually check that the '#{previous}' label has no tickets assigned (or rerun this command in a few minutes time)"
@@ -74,7 +73,7 @@ def ensure_milestone(repository, milestone)
 
   if current.nil?
     new = github.create_milestone(repository, milestone["name"], description: milestone["description"])
-    puts "Successfully added milestone"
+    puts "  Successfully added milestone"
   else
     unless current[:title] == milestone["name"] && current[:description] == milestone["description"]
       github.update_milestone(repository, current[:number], title: milestone["name"], description: milestone["description"])
@@ -88,7 +87,7 @@ def ensure_milestone(repository, milestone)
 
     count = 0
     issues_with(repository, "milestone", previous) do |issue|
-      puts "Setting milestone on issue #{issue}"
+      puts "  Setting milestone on issue #{issue}"
       github.update_issue(repository, issue, milestone: new[:number])
       count += 1
       puts "-----"
@@ -99,7 +98,7 @@ def ensure_milestone(repository, milestone)
     # that should be OK
     remaining = issues_with(repository, "milestone", previous)
     if remaining.empty? || remaining.length == count
-      puts "Deleting milestone '#{previous}' from #{repository}"
+      puts "  Deleting milestone '#{previous}' from #{repository}"
       github.delete_milestone(repository, previous_number)
     else
       puts "There are remaining issues returned from search - you should manually check that the '#{previous}' milestone has no tickets assigned (or rerun this command in a few minutes time)"

@@ -5,6 +5,8 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
+    faraday-http-cache (2.0.0)
+      faraday (~> 0.8)
     multipart-post (2.0.0)
     netrc (0.11.0)
     octokit (4.13.0)
@@ -21,9 +23,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  faraday-http-cache
   netrc
   octokit
   toml (~> 0.1)
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

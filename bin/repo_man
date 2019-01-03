@@ -5,9 +5,22 @@ require "netrc"
 require "octokit"
 require "toml"
 require "pp"
+require "faraday-http-cache"
 
 def github
-  @github ||= Octokit::Client.new(:netrc => true)
+  @github ||= begin
+    faraday = Faraday::RackBuilder.new do |builder|
+      builder.use Faraday::HttpCache
+      builder.use Octokit::Response::RaiseError
+      builder.adapter Faraday.default_adapter
+    end
+
+    connection = Octokit::Client.new(:netrc => true)
+    connection.auto_paginate = true
+    connection.middleware = faraday
+    connection.per_page = 100
+    connection
+  end
 end
 
 # Some ground rules:

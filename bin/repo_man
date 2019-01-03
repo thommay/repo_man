@@ -154,9 +154,13 @@ def repos(config_hash)
     repos = []
     config_hash["organizations"]["orgs"].each do |org|
       # grab all the full repo names in this org. If no type is specified use public and also skip the forks
-      repos << github.org_repos(org, type: config_hash["type"] || "public").collect { |x| x["full_name"] unless x["fork"] }
+      # we also skip anything in the blacklist array
+      repos << github.org_repos(org, type: config_hash["organizations"]["type"] || "public")
+                     .collect { |x| x["full_name"] unless x["fork"] || x["archived"] || (config_hash["organizations"]["blacklist"] && config_hash["organizations"]["blacklist"].include?(x["full_name"])) }
     end
-    repos.flatten.compact.sort # return a single sorted array w/o nils
+    repo_list = repos.flatten.compact.sort # return a single sorted array w/o nils
+    puts "Based on the provided org(s) (#{config_hash["organizations"]["orgs"].join(',')}) managing the following repos: #{repo_list.join(', ')}"
+    repo_list
   elsif config_hash["repositories"]
     config_hash["repositories"]
   else

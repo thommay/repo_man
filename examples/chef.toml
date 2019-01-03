@@ -73,7 +73,7 @@ mappings = ["Documentation", "documentation", "Type: Documentation"]
 [[label]]
 color = "bfd4f2"
 name = "Expeditor: Skip Changelog"
-mappings = ["Changelog: Skip Update", "Exclude From Changelog", "Expeditor: Exclude From Changelog"]
+mappings = ["Changelog: Skip Update", "Exclude From Changelog", "Expeditor: Exclude From Changelog", "No_Changelog"]
 
 [[label]]
 color = "bfd4f2"
@@ -173,7 +173,7 @@ mappings = ["Finish for Merge", "Status: Finish for Merge"]
 
 color = "0052cc"
 name = "Status: Incomplete"
-mappings = ["Incomplete Contribution", "in progress", "Do Not Merge"]
+mappings = ["Incomplete Contribution", "in progress", "Do Not Merge", "do-not-merge", "In Progress"]
 
 color = "0052cc"
 name = "Status: Waiting on Contributor"

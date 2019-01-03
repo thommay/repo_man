@@ -397,3 +397,7 @@ delete = true
 [[label]]
 name = "Reviewed"
 delete = true
+
+[[label]]
+name = "investigate"
+delete = true

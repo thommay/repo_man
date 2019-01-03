@@ -15,7 +15,7 @@ def github
       builder.adapter Faraday.default_adapter
     end
 
-    connection = Octokit::Client.new(:netrc => true)
+    connection = Octokit::Client.new(netrc: true)
     connection.auto_paginate = true
     connection.middleware = faraday
     connection.per_page = 100
@@ -28,7 +28,7 @@ end
 # To do mappings, we'll create the new label, and then for each issue
 # with the old label, we'll add the new label, then remove the old one.
 def ensure_label(repository, label)
-  mappings = label.fetch("mappings") {[]}
+  mappings = label.fetch("mappings") { [] }
   all = github.labels(repository)
 
   if label["delete"]
@@ -36,7 +36,7 @@ def ensure_label(repository, label)
     return
   end
 
-  current = all.select { |cur| cur[:name] == label["name"]}.first
+  current = all.select { |cur| cur[:name] == label["name"] }.first
   if current.nil?
     github.add_label(repository, label["name"], label["color"])
     puts "  Successfully added label"
@@ -81,7 +81,7 @@ def ensure_milestone(repository, milestone)
   mappings = milestone.delete("mappings") { [] }
   all = github.milestones(repository)
 
-  current = all.select { |cur| cur[:title] == milestone["name"]}.first
+  current = all.select { |cur| cur[:title] == milestone["name"] }.first
   new = current
 
   if current.nil?
@@ -134,7 +134,14 @@ def issues_with(repository, type, label, &block)
   issues
 end
 
-Octokit.auto_paginate = true
+def ensure_with_retries(type, repo, object)
+  send("ensure_#{type}".to_sym, repo, object)
+rescue Octokit::TooManyRequests
+  time_until_limit_over = github.rate_limit['resets_in'] + 5 # 5 more to be safe
+  puts "  GitHub API limit reached! Waiting #{time_until_limit_over} seconds before making the next request"
+  sleep time_until_limit_over
+  retry
+end
 
 options = {}
 OptionParser.new do |opts|
@@ -155,17 +162,17 @@ OptionParser.new do |opts|
 end.parse!
 
 config = TOML.load_file(options["config"])
-config['repositories'].each do |repo|
-  unless config['label'].nil?
-    config['label'].each do |label|
+config["repositories"].each do |repo|
+  unless config["label"].nil?
+    config["label"].each do |label|
       puts "Working on label '#{label['name']}' for '#{repo}'"
-      ensure_label(repo, label)
+      ensure_with_retries("label", repo, label)
     end
   end
-  unless config['milestones'].nil?
-    config['milestones'].each do |milestone|
+  unless config["milestones"].nil?
+    config["milestones"].each do |milestone|
       puts "Working on milestone '#{milestone['name']}' for '#{repo}'"
-      ensure_milestone(repo, milestone)
+      ensure_with_retries("milestone", repo, milestone)
     end
   end
 end

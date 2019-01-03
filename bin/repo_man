@@ -57,7 +57,7 @@ def ensure_label(repository, label)
       puts "Deleting label '#{previous}' from #{repository}"
       github.delete_label!(repository, previous)
     else
-      puts "There are remaining issues returned from search - you should manually check that the '#{previous}' label has no tickets assigned (or rerun this script in a few minutes time)"
+      puts "There are remaining issues returned from search - you should manually check that the '#{previous}' label has no tickets assigned (or rerun this command in a few minutes time)"
     end
   end
 end
@@ -102,7 +102,7 @@ def ensure_milestone(repository, milestone)
       puts "Deleting milestone '#{previous}' from #{repository}"
       github.delete_milestone(repository, previous_number)
     else
-      puts "There are remaining issues returned from search - you should manually check that the '#{previous}' milestone has no tickets assigned (or rerun this script in a few minutes time)"
+      puts "There are remaining issues returned from search - you should manually check that the '#{previous}' milestone has no tickets assigned (or rerun this command in a few minutes time)"
     end
   end
 end

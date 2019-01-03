@@ -137,7 +137,13 @@ end
 
 # rescues github timeouts so we can wait and try again
 def ensure_with_retries(type, repo, object)
+  attempts = 1
   send("ensure_#{type}".to_sym, repo, object)
+rescue Octokit::BadGateway => e
+  raise "Too many errors received from Github. Cannot continue! #{e}" if attempts > 10
+  sleep 5
+  attempts += 1
+  retry
 rescue Octokit::TooManyRequests
   time_until_limit_over = github.rate_limit["resets_in"] + 5 # 5 more to be safe
   decorator = TTY::Spinner.new("  :spinner GitHub API limit reached! Waiting #{time_until_limit_over} seconds before making the next request", format: :spin)

@@ -145,6 +145,26 @@ rescue Octokit::TooManyRequests
   retry
 end
 
+# either fetch repos from the org specified in the config file or
+# from the repos in the config
+#
+# @returns [Array]
+def repos(config_hash)
+  if config_hash["organizations"]
+    repos = []
+    config_hash["organizations"]["orgs"].each do |org|
+      # grab all the full repo names in this org. If no type is specified use public and also skip the forks
+      repos << github.org_repos(org, type: config_hash["type"] || "public").collect { |x| x["full_name"] unless x["fork"] }
+    end
+    repos.flatten.compact.sort # return a single sorted array w/o nils
+  elsif config_hash["repositories"]
+    config_hash["repositories"]
+  else
+    puts "Config does not include either 'repositories' or 'organizations' sections. Cannot continue!"
+    exit!
+  end
+end
+
 options = {}
 OptionParser.new do |opts|
   opts.banner = "Usage: repo_man [options]"
@@ -164,7 +184,7 @@ OptionParser.new do |opts|
 end.parse!
 
 config = TOML.load_file(options["config"])
-config["repositories"].each do |repo|
+repos(config).each do |repo|
   unless config["label"].nil?
     config["label"].each do |label|
       puts "Working on label '#{label['name']}' for '#{repo}'"

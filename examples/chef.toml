@@ -23,6 +23,11 @@ name = "Aspect: Integration"
 
 [[label]]
 color = "d4c5f9"
+name = "Aspect: Scalability"
+mappings = ["scalability"]
+
+[[label]]
+color = "d4c5f9"
 name = "Aspect: Packaging"
 mappings = ["Area: Packaging"]
 
@@ -112,7 +117,7 @@ name = "Expeditor: Skip Habitat"
 [[label]]
 color = "bfd4f2"
 name = "Expeditor: Skip Omnibus"
-mappings = ["Expeditor: Skip Build"]
+mappings = ["Expeditor: Skip Build", "Omnibus: Skip Build"]
 
 [[label]]
 color = "bfd4f2"
@@ -197,10 +202,12 @@ color = "0052cc"
 name = "Status: Needs Adoption"
 mappings = ["Finish for Merge", "Status: Finish for Merge"]
 
+[[label]]
 color = "0052cc"
 name = "Status: Incomplete"
 mappings = ["Incomplete Contribution", "in progress", "Do Not Merge", "do-not-merge", "In Progress"]
 
+[[label]]
 color = "0052cc"
 name = "Status: Waiting on Contributor"
 
@@ -287,7 +294,7 @@ mappings = ["Regression"]
 [[label]]
 color = "eb6420"
 name = "Priority: Critical"
-mappings = ["High Priority"]
+mappings = ["High Priority", "critical"]
 
 [[label]]
 color = "eb6420"
@@ -459,6 +466,10 @@ delete = true
 
 [[label]]
 name = "No_Changelog"
+delete = true
+
+[[label]]
+name = "critical"
 delete = true
 
 [[label]]

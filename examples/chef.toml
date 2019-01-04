@@ -200,12 +200,12 @@ name = "Status: Adopted"
 [[label]]
 color = "0052cc"
 name = "Status: Needs Adoption"
-mappings = ["Finish for Merge", "Status: Finish for Merge"]
+mappings = ["Finish for Merge", "Status: Finish for Merge", "Status: Abandoned"]
 
 [[label]]
 color = "0052cc"
 name = "Status: Incomplete"
-mappings = ["Incomplete Contribution", "in progress", "Do Not Merge", "do-not-merge", "In Progress"]
+mappings = ["Incomplete Contribution", "in progress", "Do Not Merge", "do-not-merge", "In Progress", "Status: In Progress", "Status: Blocked", "Status: On Hold"]
 
 [[label]]
 color = "0052cc"
@@ -246,6 +246,7 @@ mappings = [ "duplicate", "Duplicate", "Status: Duplicate" ]
 [[label]]
 color = "bfe5bf"
 name = "Type: Chore"
+mappings = ["Type: Maintenance"]
 
 [[label]]
 color = "bfe5bf"
@@ -278,7 +279,7 @@ name = "Type: Bug"
 [[label]]
 color = "bfe5bf"
 name = "Type: Enhancement"
-mappings = ["Enhancement", "enhancement", "Improvement"]
+mappings = ["Enhancement", "enhancement", "Improvement", "Type: Feature Request" ]
 
 [[label]]
 color = "bfe5bf"
@@ -294,7 +295,7 @@ mappings = ["Regression"]
 [[label]]
 color = "eb6420"
 name = "Priority: Critical"
-mappings = ["High Priority", "critical"]
+mappings = ["High Priority", "critical", "Priority: High"]
 
 [[label]]
 color = "eb6420"

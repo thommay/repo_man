@@ -385,10 +385,6 @@ name = "Area: Solaris"
 delete = true
 
 [[label]]
-name = "Area: Solaris"
-delete = true
-
-[[label]]
 name = "Area: Mac"
 delete = true
 

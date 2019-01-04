@@ -356,63 +356,11 @@ name = "Discussion"
 delete = true
 
 [[label]]
-name = "question"
-delete = true
-
-[[label]]
 name = "Needs Action"
 delete = true
 
 [[label]]
-name = "Area: AIX"
-delete = true
-
-[[label]]
-name = "Area: BSD"
-delete = true
-
-[[label]]
-name = "Area: Ubuntu"
-delete = true
-
-[[label]]
-name = "Area: Solaris"
-delete = true
-
-[[label]]
-name = "Area: Mac"
-delete = true
-
-[[label]]
-name = "Area: Windows"
-delete = true
-
-[[label]]
-name = "Area: Enterprise Linux"
-delete = true
-
-[[label]]
-name = "Waiting on Feedback"
-delete = true
-
-[[label]]
-name = "Type: Performance"
-delete = true
-
-[[label]]
-name = "Type: Retest for Status "
-delete = true
-
-[[label]]
-name = "Area: Packaging"
-delete = true
-
-[[label]]
-name = "Type: Delight Blocker"
-delete = true
-
-[[label]]
-name = "good first issue"
+name = "Type: Retest for Status"
 delete = true
 
 [[label]]
@@ -420,47 +368,11 @@ name = "Reviewed"
 delete = true
 
 [[label]]
-name = "Security"
-delete = true
-
-[[label]]
-name = "Version: Skip Bump"
-delete = true
-
-[[label]]
-name = "wontfix"
-delete = true
-
-[[label]]
-name = "question"
-delete = true
-
-[[label]]
-name = "enhancement"
-delete = true
-
-[[label]]
-name = "duplicate"
-delete = true
-
-[[label]]
 name = "Review Required"
 delete = true
 
 [[label]]
-name = "bug"
-delete = true
-
-[[label]]
-name = "New Feature"
-delete = true
-
-[[label]]
-name = "No_Changelog"
-delete = true
-
-[[label]]
-name = "critical"
+name = "Status: Maintainer Review Needed"
 delete = true
 
 [[label]]

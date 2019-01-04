@@ -32,7 +32,7 @@ mappings = ["Area: Packaging"]
 [[label]]
 color = "d4c5f9"
 name = "Aspect: Performance"
-mappings = ["Type: Performance"]
+mappings = ["Type: Performance", "performance"]
 
 [[label]]
 color = "d4c5f9"
@@ -194,6 +194,7 @@ mappings = ["Area: Windows"]
 [[label]]
 color = "0052cc"
 name = "Status: Adopted"
+mappings = ["Status: Pull Request Submitted", "Status: Assigned to Team"]
 
 [[label]]
 color = "0052cc"
@@ -369,6 +370,10 @@ delete = true
 
 [[label]]
 name = "Review Required"
+delete = true
+
+[[label]]
+name = "Developing"
 delete = true
 
 [[label]]

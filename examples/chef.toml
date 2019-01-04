@@ -2,13 +2,11 @@
 type = "public"
 orgs = ["chef"]
 blacklist = ["chef/chef-web-docs",
-             "chef/chef-server",
              "chef/chef-community-slack-meetings",
              "chef/chef-rfc",
              "chef/community-summits",
              "chef/devops-kungfu",
              "chef/dmidecode_collection",
-             "chef/msys-bash",
              "chef/os_release"]
 
 ### Aspects

@@ -62,6 +62,38 @@ color = "d4c5f9"
 name = "Aspect: Documentation"
 mappings = ["Documentation", "documentation", "Type: Documentation"]
 
+### Size
+
+[[label]]
+name = "Size: XS"
+mappings = ["XS"]
+color = "008672"
+
+[[label]]
+name = "Size: S"
+mappings = ["S", "Small"]
+color = "008672"
+
+[[label]]
+name = "Size: M"
+mappings = ["M", "Medium"]
+color = "008672"
+
+[[label]]
+name = "Size: L"
+mappings = ["L", "Large"]
+color = "008672"
+
+[[label]]
+name = "Size: XL"
+mappings = ["XL"]
+color = "008672"
+
+[[label]]
+name = "Size: XXL"
+mappings = ["XXL"]
+color = "008672"
+
 ### Expeditor
 
 [[label]]

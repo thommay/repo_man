@@ -348,10 +348,6 @@ name = "invalid"
 delete = true
 
 [[label]]
-name = "question"
-delete = true
-
-[[label]]
 name = "Attack List"
 delete = true
 

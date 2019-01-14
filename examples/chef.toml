@@ -1,8 +1,7 @@
 [organizations]
 type = "public"
 orgs = ["chef"]
-blacklist = ["chef/chef-web-docs",
-             "chef/chef-community-slack-meetings",
+blacklist = ["chef/chef-community-slack-meetings",
              "chef/chef-rfc",
              "chef/community-summits",
              "chef/devops-kungfu",

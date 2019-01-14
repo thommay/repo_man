@@ -62,7 +62,7 @@ name = "Aspect: UI"
 [[label]]
 color = "d4c5f9"
 name = "Aspect: Documentation"
-mappings = ["Documentation", "documentation", "Type: Documentation"]
+mappings = ["Documentation", "documentation", "Type: Documentation", "Docs"]
 
 ### Size
 
@@ -96,12 +96,12 @@ name = "Size: XXL"
 mappings = ["XXL"]
 color = "008672"
 
-### Expeditor
+## Expeditor
 
 [[label]]
 color = "bfd4f2"
 name = "Expeditor: Skip Changelog"
-mappings = ["Changelog: Skip Update", "Exclude From Changelog", "Expeditor: Exclude From Changelog", "No_Changelog"]
+mappings = ["Meta: Exclude From Changelog", "Changelog: Skip Update", "Exclude From Changelog", "Expeditor: Exclude From Changelog", "No_Changelog"]
 
 [[label]]
 color = "bfd4f2"
@@ -227,7 +227,7 @@ mappings = ["Triaged", "Status: Confirmed"]
 [[label]]
 color = "f49866"
 name = "Triage: Needs Information"
-mappings = ["Status: Pending Contributor Response", "Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse", "Waiting on Contributor", "Waiting on Feedback"]
+mappings = ["Status: Pending Contributor Response", "Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse", "Waiting on Contributor", "Waiting on Feedback", "Need More Information"]
 
 [[label]]
 color = "f49866"
@@ -244,7 +244,7 @@ mappings = [ "duplicate", "Duplicate", "Status: Duplicate" ]
 [[label]]
 color = "bfe5bf"
 name = "Type: Chore"
-mappings = ["Type: Maintenance"]
+mappings = ["Type: Maintenance", "Chore"]
 
 [[label]]
 color = "bfe5bf"

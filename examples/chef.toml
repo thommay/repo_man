@@ -11,337 +11,358 @@ blacklist = ["chef/chef-community-slack-meetings",
 ### Aspects
 
 [[label]]
-color = "d4c5f9"
 name = "Aspect: Correctness"
+color = "d4c5f9"
+description = "Does the implementation match the specification?"
 
 [[label]]
-color = "d4c5f9"
 name = "Aspect: Integration"
+color = "d4c5f9"
+description = "Works correctly with other projects or systems."
 
 [[label]]
-color = "d4c5f9"
-name = "Aspect: Scalability"
-mappings = ["scalability"]
-
-[[label]]
-color = "d4c5f9"
 name = "Aspect: Packaging"
+color = "d4c5f9"
 mappings = ["Area: Packaging"]
+description = "Distribution of the projects 'compiled' artifacts."
 
 [[label]]
-color = "d4c5f9"
 name = "Aspect: Performance"
-mappings = ["Type: Performance", "performance"]
+color = "d4c5f9"
+mappings = ["Type: Performance", "performance", "Aspect: Scalability"]
+description = "Works without negatively affecting the system running it."
 
 [[label]]
-color = "d4c5f9"
 name = "Aspect: Portability"
+color = "d4c5f9"
+description = "Does this project work correctly on the specified platform?"
 
 [[label]]
-color = "d4c5f9"
 name = "Aspect: Security"
+color = "d4c5f9"
 mappings = ["Security"]
+description = "Can an unwanted third party affect the stability or look at privileged information?"
 
 [[label]]
-color = "d4c5f9"
 name = "Aspect: Stability"
+color = "d4c5f9"
+description = "Consistent results."
 
 [[label]]
-color = "d4c5f9"
 name = "Aspect: Testing"
+color = "d4c5f9"
+description = "Does the project have good coverage, and is CI working?"
 
 [[label]]
-color = "d4c5f9"
-name = "Aspect: UX"
-mappings = ["Type: Delight Blocker"]
-
-[[label]]
-color = "d4c5f9"
-name = "Aspect: UI"
-
-[[label]]
-color = "d4c5f9"
 name = "Aspect: Documentation"
+color = "d4c5f9"
 mappings = ["Documentation", "documentation", "Type: Documentation", "Docs"]
+description = "How do we use this project?"
 
 ### Size
 
 [[label]]
 name = "Size: XS"
+description = "A PR that changes 0-9 lines, ignoring generated files."
 mappings = ["XS"]
 color = "008672"
 
 [[label]]
 name = "Size: S"
+description = "A PR that changes 10-29 lines, ignoring generated files."
 mappings = ["S", "Small"]
 color = "008672"
 
 [[label]]
 name = "Size: M"
+description = "A PR that changes 30-99 lines, ignoring generated files."
 mappings = ["M", "Medium"]
 color = "008672"
 
 [[label]]
 name = "Size: L"
+description = "A PR that changes 100-499 lines, ignoring generated files."
 mappings = ["L", "Large"]
 color = "008672"
 
 [[label]]
 name = "Size: XL"
+description = "A PR that changes 500-999 lines, ignoring generated files."
 mappings = ["XL"]
 color = "008672"
 
 [[label]]
 name = "Size: XXL"
+description = "A PR that changes 1000+ lines, ignoring generated files."
 mappings = ["XXL"]
 color = "008672"
 
 ## Expeditor
 
 [[label]]
+name = "Expeditor: Skip All"
 color = "bfd4f2"
+description = "Used to skip all merge_actions."
+
+[[label]]
 name = "Expeditor: Skip Changelog"
+color = "bfd4f2"
+description = "Used to skip built_in:update_changelog."
 mappings = ["Meta: Exclude From Changelog", "Changelog: Skip Update", "Exclude From Changelog", "Expeditor: Exclude From Changelog", "No_Changelog"]
 
 [[label]]
-color = "bfd4f2"
-name = "Expeditor: Skip All"
-
-[[label]]
-color = "bfd4f2"
 name = "Expeditor: Skip Habitat"
+description = "Used to skip built_in:trigger_habitat_package_build"
+color = "bfd4f2"
 
 [[label]]
-color = "bfd4f2"
 name = "Expeditor: Skip Omnibus"
+description = "Used to skip built_in:trigger_omnibus_release_build"
+color = "bfd4f2"
 mappings = ["Expeditor: Skip Build", "Omnibus: Skip Build"]
 
 [[label]]
+name = "Expeditor: Bump Version Minor"
+description = "Used by github.minor_bump_labels to bump the Minor version number."
 color = "bfd4f2"
-name = "Expeditor: Skip Version Bump"
-mappings = ["Version: Skip Bump"]
+mappings = ["Expeditor: Bump Minor Version"]
 
 [[label]]
+name = "Expeditor: Bump Version Major"
+description = "Used by github.major_bump_labels to bump the Major version number."
 color = "bfd4f2"
-name = "Expeditor: Bump Version Minor"
-mappings = ["Expeditor: Bump Minor Version"]
+
+[[label]]
+name = "Expeditor: Skip Version Bump"
+description = "Used to skip built_in:bump_version"
+color = "bfd4f2"
+mappings = ["Version: Skip Bump"]
 
 ### Help
 
 [[label]]
-color = "d34a00"
 name = "Help: Good First Issue"
+description = "An issue ready for a new contributor."
+color = "d34a00"
 mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted", "Jump In", "good first issue", "Type: Jump In"]
 
 [[label]]
-color = "d34a00"
 name = "Help: Help Wanted"
+description = "An issue that needs help from a contributor."
+color = "d34a00"
 
 ### Platform
 
 [[label]]
-color = "a2c429"
 name = "Platform: AWS"
+color = "a2c429"
 
 [[label]]
-color = "a2c429"
 name = "Platform: Azure"
+color = "a2c429"
 
 [[label]]
-color = "a2c429"
 name = "Platform: Docker"
+color = "a2c429"
 
 [[label]]
-color = "a2c429"
 name = "Platform: GCP"
+color = "a2c429"
 
 [[label]]
-color = "a2c429"
 name = "Platform: Linux"
+color = "a2c429"
 
 [[label]]
-color = "a2c429"
 name = "Platform: macOS"
+color = "a2c429"
 mappings = ["Area: Mac"]
 
 [[label]]
-color = "a2c429"
 name = "Platform: RHEL-like"
+color = "a2c429"
 mappings = ["Area: Enterprise Linux"]
 
 [[label]]
-color = "a2c429"
 name = "Platform: Debian-like"
+color = "a2c429"
 mappings = ["Area: Ubuntu"]
 
 [[label]]
-color = "a2c429"
 name = "Platform: VMware"
+color = "a2c429"
 
 [[label]]
-color = "a2c429"
 name = "Platform: Unix-like"
+color = "a2c429"
 mappings = ["Area: SmartOS", "Area: Solaris", "Area: BSD", "Area: AIX"]
 
 [[label]]
-color = "a2c429"
 name = "Platform: Windows"
+color = "a2c429"
 mappings = ["Area: Windows"]
 
 ### Status
 
 [[label]]
-color = "0052cc"
 name = "Status: Adopted"
+description = "An issue that is being worked on."
+color = "0052cc"
 mappings = ["Status: Pull Request Submitted", "Status: Assigned to Team"]
 
 [[label]]
-color = "0052cc"
 name = "Status: Needs Adoption"
+description = "An issue that has enough details to be started."
+color = "0052cc"
 mappings = ["Finish for Merge", "Status: Finish for Merge", "Status: Abandoned"]
 
 [[label]]
-color = "0052cc"
 name = "Status: Incomplete"
+description = "A pull request that is not ready to be merged as noted by the author."
+color = "0052cc"
 mappings = ["Incomplete Contribution", "in progress", "Do Not Merge", "do-not-merge", "In Progress", "Status: In Progress", "Status: Blocked", "Status: On Hold"]
 
 [[label]]
-color = "0052cc"
 name = "Status: Waiting on Contributor"
+description = "A pull request that has unresolved requested actions from the author."
+color = "0052cc"
 
 ### Triage
 
 [[label]]
-color = "f49866"
 name = "Triage: Support"
+description = "Indicates an issue that is a support question."
+color = "f49866"
 
 [[label]]
-color = "f49866"
 name = "Triage: Not Reproducible"
+description = "Indicates an issue can not be reproduced as described."
+color = "f49866"
 
 [[label]]
-color = "f49866"
 name = "Triage: Confirmed"
+description = "Indicates and issue has been confirmed as described."
+color = "f49866"
 mappings = ["Triaged", "Status: Confirmed"]
 
 [[label]]
-color = "f49866"
 name = "Triage: Needs Information"
+description = "Indicates an issue needs more information in order to work on it."
+color = "f49866"
 mappings = ["Status: Pending Contributor Response", "Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse", "Waiting on Contributor", "Waiting on Feedback", "Need More Information"]
 
 [[label]]
-color = "f49866"
 name = "Triage: Declined"
+description = "Indicates an issue that can not or will not be resolved."
+color = "f49866"
 mappings = ["wontfix", "Status: Won't Fix", "Won't Fix"]
 
 [[label]]
-color = "f49866"
 name = "Triage: Duplicate"
+description = "Indicates an issue is a duplicate of other open issue."
+color = "f49866"
 mappings = [ "duplicate", "Duplicate", "Status: Duplicate" ]
 
 ### Type
 
 [[label]]
-color = "bfe5bf"
 name = "Type: Chore"
+color = "bfe5bf"
 mappings = ["Type: Maintenance", "Chore"]
 
 [[label]]
-color = "bfe5bf"
 name = "Type: Breaking Change"
+color = "bfe5bf"
 
 [[label]]
-color = "bfe5bf"
 name = "Type: Deprecation"
+color = "bfe5bf"
 
 [[label]]
-color = "bfe5bf"
 name = "Type: Question"
+color = "bfe5bf"
 mappings = ["question"]
 
 [[label]]
-color = "bfe5bf"
 name = "Type: Tech Debt"
+description = "Refactoring"
+color = "bfe5bf"
 mappings = ["Tech Cleanup", "Debt"]
 
 [[label]]
-color = "bfe5bf"
 name = "Type: Regression"
+color = "bfe5bf"
 mappings = ["Regression"]
 
 [[label]]
+name = "Type: Bug"
 color = "bfe5bf"
 mappings = [ "Bug", "bug", "Bug Fix" ]
-name = "Type: Bug"
 
 [[label]]
-color = "bfe5bf"
 name = "Type: Enhancement"
-mappings = ["Enhancement", "enhancement", "Improvement", "Type: Feature Request" ]
+color = "bfe5bf"
+mappings = ["Enhancement", "enhancement", "Improvement","Feature Request", "New Feature", "Feature"]
 
 [[label]]
-color = "bfe5bf"
-name = "Type: Feature Request"
-mappings = ["Feature Request", "New Feature", "Feature"]
-
-color = "bfe5bf"
 name = "Type: Regression"
+color = "bfe5bf"
 mappings = ["Regression"]
 
 ### Priority
 
 [[label]]
-color = "eb6420"
 name = "Priority: Critical"
+color = "eb6420"
 mappings = ["High Priority", "critical", "Priority: High"]
 
 [[label]]
-color = "eb6420"
 name = "Priority: Medium"
+color = "eb6420"
 mappings = ["Medium Priority"]
 
 [[label]]
-color = "eb6420"
 name = "Priority: Low"
+color = "eb6420"
 mappings = ["Low Priority"]
 
 ### Old labels to delete
 
 [[label]]
-delete = true
 name = "CLA Verified"
+delete = true
 
 [[label]]
-delete = true
 name = "CLA Needed"
+delete = true
 
 [[label]]
-delete = true
 name = "General"
+delete = true
 
 [[label]]
-delete = true
 name = "office hours"
+delete = true
 
 [[label]]
-delete = true
 name = "Help"
+delete = true
 
 [[label]]
-delete = true
 name = "Delivery Change Created"
+delete = true
 
 [[label]]
-delete = true
 name = "Status: Ready for Merge"
+delete = true
 
 [[label]]
-delete = true
 name = "Status: Pending Maintainer Review"
+delete = true
 
 [[label]]
-delete = true
 name = "Signed CLA"
+delete = true
 
 [[label]]
 name = "invalid"
@@ -381,4 +402,12 @@ delete = true
 
 [[label]]
 name = "investigate"
+delete = true
+
+[[label]]
+name = "Aspect: UX"
+delete = true
+
+[[label]]
+name = "Aspect: UI"
 delete = true

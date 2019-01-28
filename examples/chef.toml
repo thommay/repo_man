@@ -213,13 +213,13 @@ color = "0052cc"
 name = "Status: Good First Issue"
 description = "An issue ready for a new contributor."
 color = "0052cc"
-mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted", "Jump In", "good first issue", "Type: Jump In"]
+mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "Jump In", "good first issue", "Type: Jump In", "Help: Good First Issue"]
 
 [[label]]
 name = "Status: Help Wanted"
 description = "An issue that needs help from a contributor."
 color = "0052cc"
-mappings = ["Finish for Merge", "Status: Finish for Merge", "Status: Abandoned", "Status: Needs Adoption"]
+mappings = ["Finish for Merge", "Status: Finish for Merge", "Status: Abandoned", "Status: Needs Adoption", "Help: Help Wanted", "Help", "help wanted", "Help Wanted"]
 
 ### Triage
 
@@ -242,9 +242,9 @@ mappings = ["Triaged", "Status: Confirmed"]
 
 [[label]]
 name = "Triage: Feature Request"
-description = "Indicats an issue requesting new functionality."
+description = "Indicates an issue requesting new functionality."
 color = "f49866"
-mappings = ["Feature Request"]
+mappings = ["Feature Request", "Type: Feature Request"]
 
 [[label]]
 name = "Triage: Needs Information"
@@ -339,10 +339,6 @@ delete = true
 
 [[label]]
 name = "office hours"
-delete = true
-
-[[label]]
-name = "Help"
 delete = true
 
 [[label]]

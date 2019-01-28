@@ -1,6 +1,7 @@
+
 [organizations]
 type = "public"
-orgs = ["chef"]
+orgs = ["chef-partners" ]
 blacklist = ["chef/chef-community-slack-meetings",
              "chef/chef-rfc",
              "chef/community-summits",
@@ -138,19 +139,6 @@ description = "Used to skip built_in:bump_version"
 color = "bfd4f2"
 mappings = ["Version: Skip Bump"]
 
-### Help
-
-[[label]]
-name = "Help: Good First Issue"
-description = "An issue ready for a new contributor."
-color = "d34a00"
-mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted", "Jump In", "good first issue", "Type: Jump In"]
-
-[[label]]
-name = "Help: Help Wanted"
-description = "An issue that needs help from a contributor."
-color = "d34a00"
-
 ### Platform
 
 [[label]]
@@ -211,12 +199,6 @@ color = "0052cc"
 mappings = ["Status: Pull Request Submitted", "Status: Assigned to Team"]
 
 [[label]]
-name = "Status: Needs Adoption"
-description = "An issue that has enough details to be started."
-color = "0052cc"
-mappings = ["Finish for Merge", "Status: Finish for Merge", "Status: Abandoned"]
-
-[[label]]
 name = "Status: Incomplete"
 description = "A pull request that is not ready to be merged as noted by the author."
 color = "0052cc"
@@ -227,12 +209,25 @@ name = "Status: Waiting on Contributor"
 description = "A pull request that has unresolved requested actions from the author."
 color = "0052cc"
 
+[[label]]
+name = "Status: Good First Issue"
+description = "An issue ready for a new contributor."
+color = "0052cc"
+mappings = ["Easy", "hacktoberfest", "Hacktoberfest", "help wanted", "Help Wanted", "Jump In", "good first issue", "Type: Jump In"]
+
+[[label]]
+name = "Status: Help Wanted"
+description = "An issue that needs help from a contributor."
+color = "0052cc"
+mappings = ["Finish for Merge", "Status: Finish for Merge", "Status: Abandoned", "Status: Needs Adoption"]
+
 ### Triage
 
 [[label]]
 name = "Triage: Support"
-description = "Indicates an issue that is a support question."
+description = "Indicates an issue that is a support question and will be redirected to other mediums."
 color = "f49866"
+mappings = ["Type: Question"]
 
 [[label]]
 name = "Triage: Not Reproducible"
@@ -244,6 +239,12 @@ name = "Triage: Confirmed"
 description = "Indicates and issue has been confirmed as described."
 color = "f49866"
 mappings = ["Triaged", "Status: Confirmed"]
+
+[[label]]
+name = "Triage: Feature Request"
+description = "Indicats an issue requesting new functionality."
+color = "f49866"
+mappings = ["Feature Request"]
 
 [[label]]
 name = "Triage: Needs Information"
@@ -268,46 +269,42 @@ mappings = [ "duplicate", "Duplicate", "Status: Duplicate" ]
 [[label]]
 name = "Type: Chore"
 color = "bfe5bf"
+description = "non-critical maintenance of a project."
 mappings = ["Type: Maintenance", "Chore"]
 
 [[label]]
 name = "Type: Breaking Change"
+description = "Changes the way existing features work in a way that affects users."
 color = "bfe5bf"
 
 [[label]]
 name = "Type: Deprecation"
+description = "Removal of existing features."
 color = "bfe5bf"
-
-[[label]]
-name = "Type: Question"
-color = "bfe5bf"
-mappings = ["question"]
 
 [[label]]
 name = "Type: Tech Debt"
-description = "Refactoring"
+description = "Refactoring of code."
 color = "bfe5bf"
 mappings = ["Tech Cleanup", "Debt"]
 
 [[label]]
 name = "Type: Regression"
 color = "bfe5bf"
+description = "It used to work, now it doesn't."
 mappings = ["Regression"]
 
 [[label]]
 name = "Type: Bug"
+description = "Doesn't work as expected."
 color = "bfe5bf"
 mappings = [ "Bug", "bug", "Bug Fix" ]
 
 [[label]]
 name = "Type: Enhancement"
 color = "bfe5bf"
-mappings = ["Enhancement", "enhancement", "Improvement","Feature Request", "New Feature", "Feature"]
-
-[[label]]
-name = "Type: Regression"
-color = "bfe5bf"
-mappings = ["Regression"]
+description = "Adds new functionality."
+mappings = ["Enhancement", "enhancement", "Improvement", "New Feature", "Feature"]
 
 ### Priority
 

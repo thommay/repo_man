@@ -196,7 +196,7 @@ mappings = ["Area: Windows"]
 name = "Status: Adopted"
 description = "An issue that is being worked on."
 color = "0052cc"
-mappings = ["Status: Pull Request Submitted", "Status: Assigned to Team"]
+mappings = ["Status: Pull Request Submitted", "Status: Assigned to Team", "Developing"]
 
 [[label]]
 name = "Status: Incomplete"
@@ -383,10 +383,6 @@ delete = true
 
 [[label]]
 name = "Review Required"
-delete = true
-
-[[label]]
-name = "Developing"
 delete = true
 
 [[label]]

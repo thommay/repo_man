@@ -39,12 +39,17 @@ def ensure_label(repository, label)
 
   current = all.select { |cur| cur[:name] == label["name"] }.first
   if current.nil?
-    github.add_label(repository, label["name"], label["color"])
+    github.add_label(repository, label["name"], label["color"], description: label["description"])
     puts "  Successfully added label"
   else
     unless current[:color] == label["color"]
       github.update_label(repository, label["name"], color: label["color"])
       puts "  Updated color for #{label['name']}"
+    end
+
+    unless label["description"].nil? || current[:description] == label["description"]
+      github.update_label(repository, label["name"], description: label["description"])
+      puts "  Updated description for #{label['name']}"
     end
   end
 
@@ -175,16 +180,16 @@ def repos(config_hash)
   end
 end
 
-options = {}
+opt_hash = {}
 OptionParser.new do |opts|
   opts.banner = "Usage: repo_man [options]"
 
   opts.on("-c", "--config-file FILE", "The configuration to use") do |cfg|
-    options["config"] = cfg
+    opt_hash["config"] = cfg
   end
 
   opts.on("-v", "--verbose", "Make repo man verbose") do
-    options["verbose"] = true
+    opt_hash["verbose"] = true
   end
 
   opts.on("-h", "--help", "Prints this help") do
@@ -193,7 +198,7 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-config = TOML.load_file(options["config"])
+config = TOML.load_file(opt_hash["config"])
 repos(config).each do |repo|
   unless config["label"].nil?
     config["label"].each do |label|

@@ -16,6 +16,12 @@ color = "d4c5f9"
 description = "Does the implementation match the specification?"
 
 [[label]]
+name = "Aspect: Documentation"
+color = "d4c5f9"
+mappings = ["Documentation", "documentation", "Type: Documentation", "Docs"]
+description = "How do we use this project?"
+
+[[label]]
 name = "Aspect: Integration"
 color = "d4c5f9"
 description = "Works correctly with other projects or systems."
@@ -54,12 +60,6 @@ color = "d4c5f9"
 description = "Does the project have good coverage, and is CI working?"
 
 [[label]]
-name = "Aspect: Documentation"
-color = "d4c5f9"
-mappings = ["Documentation", "documentation", "Type: Documentation", "Docs"]
-description = "How do we use this project?"
-
-[[label]]
 name = "Aspect: UI"
 color = "d4c5f9"
 description = "How users interact with the interface of the project, with a focus on interaction and visual design."
@@ -68,44 +68,6 @@ description = "How users interact with the interface of the project, with a focu
 name = "Aspect: UX"
 color = "d4c5f9"
 description = "How users feel interacting with the project, focusing on function, ease-of-use and accessibility."
-
-### Size
-
-[[label]]
-name = "Size: XS"
-description = "A PR that changes 0-9 lines, ignoring generated files."
-mappings = ["XS"]
-color = "008672"
-
-[[label]]
-name = "Size: S"
-description = "A PR that changes 10-29 lines, ignoring generated files."
-mappings = ["S", "Small"]
-color = "008672"
-
-[[label]]
-name = "Size: M"
-description = "A PR that changes 30-99 lines, ignoring generated files."
-mappings = ["M", "Medium"]
-color = "008672"
-
-[[label]]
-name = "Size: L"
-description = "A PR that changes 100-499 lines, ignoring generated files."
-mappings = ["L", "Large"]
-color = "008672"
-
-[[label]]
-name = "Size: XL"
-description = "A PR that changes 500-999 lines, ignoring generated files."
-mappings = ["XL"]
-color = "008672"
-
-[[label]]
-name = "Size: XXL"
-description = "A PR that changes 1000+ lines, ignoring generated files."
-mappings = ["XXL"]
-color = "008672"
 
 ## Expeditor
 
@@ -199,6 +161,61 @@ name = "Platform: Windows"
 color = "a2c429"
 mappings = ["Area: Windows"]
 
+### Priority
+
+[[label]]
+name = "Priority: Critical"
+color = "eb6420"
+mappings = ["High Priority", "critical", "Priority: High"]
+
+[[label]]
+name = "Priority: Medium"
+color = "eb6420"
+mappings = ["Medium Priority"]
+
+[[label]]
+name = "Priority: Low"
+color = "eb6420"
+mappings = ["Low Priority"]
+
+### Size
+
+[[label]]
+name = "Size: XS"
+description = "A PR that changes 0-9 lines, ignoring generated files."
+mappings = ["XS"]
+color = "008672"
+
+[[label]]
+name = "Size: S"
+description = "A PR that changes 10-29 lines, ignoring generated files."
+mappings = ["S", "Small"]
+color = "008672"
+
+[[label]]
+name = "Size: M"
+description = "A PR that changes 30-99 lines, ignoring generated files."
+mappings = ["M", "Medium"]
+color = "008672"
+
+[[label]]
+name = "Size: L"
+description = "A PR that changes 100-499 lines, ignoring generated files."
+mappings = ["L", "Large"]
+color = "008672"
+
+[[label]]
+name = "Size: XL"
+description = "A PR that changes 500-999 lines, ignoring generated files."
+mappings = ["XL"]
+color = "008672"
+
+[[label]]
+name = "Size: XXL"
+description = "A PR that changes 1000+ lines, ignoring generated files."
+mappings = ["XXL"]
+color = "008672"
+
 ### Status
 
 [[label]]
@@ -245,6 +262,18 @@ mappings = ["Type: Sustaining Backlog"]
 ### Triage
 
 [[label]]
+name = "Triage: Duplicate"
+description = "Indicates an issue is a duplicate of other open issue."
+color = "f49866"
+mappings = [ "duplicate", "Duplicate", "Status: Duplicate" ]
+
+[[label]]
+name = "Triage: Declined"
+description = "Indicates an issue that can not or will not be resolved."
+color = "f49866"
+mappings = ["wontfix", "Status: Won't Fix", "Won't Fix", "invalid"]
+
+[[label]]
 name = "Triage: Support"
 description = "Indicates an issue that is a support question and will be redirected to other mediums."
 color = "f49866"
@@ -273,47 +302,13 @@ description = "Indicates an issue needs more information in order to work on it.
 color = "f49866"
 mappings = ["Status: Pending Contributor Response", "Waiting for Contributor Response", "Waiting", "Feedback Requested", "waitingresponse", "Waiting on Contributor", "Waiting on Feedback", "Need More Information"]
 
-[[label]]
-name = "Triage: Declined"
-description = "Indicates an issue that can not or will not be resolved."
-color = "f49866"
-mappings = ["wontfix", "Status: Won't Fix", "Won't Fix"]
-
-[[label]]
-name = "Triage: Duplicate"
-description = "Indicates an issue is a duplicate of other open issue."
-color = "f49866"
-mappings = [ "duplicate", "Duplicate", "Status: Duplicate" ]
 
 ### Type
-
-[[label]]
-name = "Type: Chore"
-color = "bfe5bf"
-description = "non-critical maintenance of a project."
-mappings = ["Type: Maintenance", "Chore"]
 
 [[label]]
 name = "Type: Breaking Change"
 description = "Changes the way existing features work in a way that affects users."
 color = "bfe5bf"
-
-[[label]]
-name = "Type: Deprecation"
-description = "Removal of existing features."
-color = "bfe5bf"
-
-[[label]]
-name = "Type: Tech Debt"
-description = "Refactoring of code."
-color = "bfe5bf"
-mappings = ["Tech Cleanup", "Debt"]
-
-[[label]]
-name = "Type: Regression"
-color = "bfe5bf"
-description = "It used to work, now it doesn't."
-mappings = ["Regression"]
 
 [[label]]
 name = "Type: Bug"
@@ -322,27 +317,38 @@ color = "bfe5bf"
 mappings = [ "Bug", "bug", "Bug Fix" ]
 
 [[label]]
+name = "Type: Chore"
+color = "bfe5bf"
+description = "non-critical maintenance of a project."
+mappings = ["Type: Maintenance", "Chore"]
+
+[[label]]
+name = "Type: Deprecation"
+description = "Removal of existing features."
+color = "bfe5bf"
+
+[[label]]
+name = "Type: Design Proposal"
+color = "bfe5bf"
+description = "Community survey of a proposal."
+
+[[label]]
 name = "Type: Enhancement"
 color = "bfe5bf"
 description = "Adds new functionality."
 mappings = ["Enhancement", "enhancement", "Improvement", "New Feature", "Feature"]
 
-### Priority
+[[label]]
+name = "Type: Regression"
+color = "bfe5bf"
+description = "It used to work, now it doesn't."
+mappings = ["Regression"]
 
 [[label]]
-name = "Priority: Critical"
-color = "eb6420"
-mappings = ["High Priority", "critical", "Priority: High"]
-
-[[label]]
-name = "Priority: Medium"
-color = "eb6420"
-mappings = ["Medium Priority"]
-
-[[label]]
-name = "Priority: Low"
-color = "eb6420"
-mappings = ["Low Priority"]
+name = "Type: Tech Debt"
+description = "Refactoring of code."
+color = "bfe5bf"
+mappings = ["Tech Cleanup", "Debt"]
 
 ### Old labels to delete
 
@@ -375,10 +381,6 @@ name = "Signed CLA"
 delete = true
 
 [[label]]
-name = "invalid"
-delete = true
-
-[[label]]
 name = "Attack List"
 delete = true
 
@@ -396,10 +398,6 @@ delete = true
 
 [[label]]
 name = "Reviewed"
-delete = true
-
-[[label]]
-name = "Status: Maintainer Review Needed"
 delete = true
 
 [[label]]

@@ -277,7 +277,7 @@ mappings = ["wontfix", "Status: Won't Fix", "Won't Fix", "invalid"]
 name = "Triage: Support"
 description = "Indicates an issue that is a support question and will be redirected to other mediums."
 color = "f49866"
-mappings = ["Type: Question"]
+mappings = ["Type: Question", "question"]
 
 [[label]]
 name = "Triage: Not Reproducible"

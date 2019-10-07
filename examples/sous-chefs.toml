@@ -1,0 +1,171 @@
+repositories = [
+"sous-chefs/apache2",
+"sous-chefs/apache2_mod_fastcgi",
+"sous-chefs/aptly",
+"sous-chefs/atom",
+"sous-chefs/bsdcpio",
+"sous-chefs/chef-appveyor-ci",
+"sous-chefs/chef-stunnel",
+"sous-chefs/confluence",
+"sous-chefs/consul",
+"sous-chefs/control_groups",
+"sous-chefs/dhcp",
+"sous-chefs/dnsmasq",
+"sous-chefs/filesystem",
+"sous-chefs/gpg",
+"sous-chefs/grafana",
+"sous-chefs/graphite",
+"sous-chefs/haproxy",
+"sous-chefs/java",
+"sous-chefs/kafka",
+"sous-chefs/keepalived",
+"sous-chefs/kismet",
+"sous-chefs/language-chef",
+"sous-chefs/line",
+"sous-chefs/mariadb",
+"sous-chefs/meta",
+"sous-chefs/memcached",
+"sous-chefs/mongodb",
+"sous-chefs/mysql",
+"sous-chefs/nagios",
+"sous-chefs/nano",
+"sous-chefs/nexus",
+"sous-chefs/nginx",
+"sous-chefs/nginx_simplecgi",
+"sous-chefs/npm_lazy",
+"sous-chefs/nrpe",
+"sous-chefs/openvpn",
+"sous-chefs/orbs",
+"sous-chefs/ossec",
+"sous-chefs/passenger_apache2",
+"sous-chefs/percona",
+"sous-chefs/php",
+"sous-chefs/postgresql",
+"sous-chefs/pulledpork",
+"sous-chefs/redisio",
+"sous-chefs/repo-management",
+"sous-chefs/reprepro",
+"sous-chefs/ruby_build",
+"sous-chefs/ruby_rbenv",
+"sous-chefs/rundeck",
+"sous-chefs/samba",
+"sous-chefs/sc-chruby",
+"sous-chefs/sc-nxlog",
+"sous-chefs/selinux_policy",
+"sous-chefs/sensors",
+"sous-chefs/smartmontools",
+"sous-chefs/snort",
+"sous-chefs/squid",
+"sous-chefs/SublimeChef",
+"sous-chefs/terraform-github-org",
+"sous-chefs/thor-foodcritic",
+"sous-chefs/unbound",
+"sous-chefs/unifi",
+"sous-chefs/vagrant",
+"sous-chefs/varnish",
+"sous-chefs/vault",
+"sous-chefs/vscode",
+"sous-chefs/website",
+"sous-chefs/winrm",
+"sous-chefs/zabbix-agent",
+]
+
+# Status
+[[label]]
+color = "b5e2fa"
+name = "In Progress"
+description = "In Progress"
+mappings = ["in progress"]
+
+[[label]]
+color = "5c6b77"
+name = "On Hold"
+description = ""
+
+[[label]]
+color = "434e57"
+name = "Duplicate"
+description = "Duplicate of another issue or PR"
+
+[[label]]
+color = "0fa3b1"
+name = "Good First Issue"
+description = "An issue ready for a new contributor"
+
+[[label]]
+color = "ea8b5f"
+name = "Help Wanted"
+description = "An issue that needs help from a contributor"
+
+# Type
+[[label]]
+color = "ea8b5f"
+name = "Maintenance"
+description = "Project maintenance"
+
+[[label]]
+color = "ea8b5f"
+name = "Tech Debt"
+description = ""
+
+[[label]]
+color = "ea8b5f"
+name = "Regression"
+description = "It used to work now it doesn't"
+
+[[label]]
+color = "bc2d2d"
+name = "Bug"
+description = "Bug in this cookbook"
+
+[[label]]
+color = "9a2525"
+name = "Upstream Bug"
+description = "Bug in software this cookbook installs"
+
+[[label]]
+color = "5c3572"
+name = "Feature Request"
+description = ""
+
+# Priority
+[[label]]
+color = "e6b2b2"
+name = "Priority: Low"
+description = "3D9970"
+
+[[label]]
+color = "ce6666"
+name = "Priority: Medium"
+description = ""
+
+[[label]]
+color = "bc2d2d"
+name = "Priority: High"
+description = ""
+
+# Requires action
+[[label]]
+color = "bc2d2d"
+name = "Needs Triage"
+description = ""
+
+[[label]]
+color = "5c6b77"
+name = "Waiting on Contributor"
+description = "Unresolved requested actions from the author"
+
+[[label]]
+color = "5c3572"
+name = "Documentation"
+descrition = "Requires documentation or clarification. Requires a PR."
+
+[[label]]
+color = "5c6b77"
+name = "Unsupported"
+description = "Not support version of Chef or Cookbook version"
+
+[[label]]
+color = "5c6b77"
+name = "hacktoberfest"
+description = "Hacktoberfest"

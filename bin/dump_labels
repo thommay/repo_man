@@ -6,6 +6,12 @@ require "octokit"
 require "toml"
 require "pp"
 
+class Time
+  def to_toml(path = "")
+    self.utc.strftime("%Y-%m-%dT%H:%M:%SZ")
+  end
+end
+
 def github
   @github ||= Octokit::Client.new(netrc: true)
 end

@@ -196,6 +196,12 @@ OptionParser.new do |opts|
     puts opts
     exit
   end
+
+  unless opt_hash["config"]
+    puts "No config file provided"
+    puts
+    abort opts.to_s
+  end
 end.parse!
 
 config = TOML.load_file(opt_hash["config"])

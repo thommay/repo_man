@@ -29,7 +29,7 @@ DEPENDENCIES
   faraday-http-cache
   netrc
   octokit
-  toml (~> 0.1)
+  toml
   tty-spinner
 
 BUNDLED WITH

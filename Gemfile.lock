@@ -11,13 +11,10 @@ GEM
     netrc (0.11.0)
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
-    parslet (1.8.2)
     public_suffix (3.1.1)
     sawyer (0.8.2)
       addressable (>= 2.3.5)
       faraday (> 0.8, < 2.0)
-    toml (0.2.0)
-      parslet (~> 1.8.0)
     tty-cursor (0.7.0)
     tty-spinner (0.9.1)
       tty-cursor (~> 0.7)
@@ -29,7 +26,6 @@ DEPENDENCIES
   faraday-http-cache
   netrc
   octokit
-  toml
   tty-spinner
 
 BUNDLED WITH

@@ -3,6 +3,5 @@ source "https://rubygems.org"
 
 gem "octokit"
 gem "netrc"
-gem "toml"
 gem "faraday-http-cache"
 gem "tty-spinner"

@@ -1,0 +1,40 @@
+---
+repositories:
+- chef/paprika
+label:
+- color: CCCCCC
+  name: 0 - Backlog
+- color: CCCCCC
+  name: 1 - Ready
+- color: CCCCCC
+  name: 2 - Working
+- color: CCCCCC
+  name: 3 - Done
+- color: ededed
+  name: All Commit Authors are CLA Signers
+- color: bfe5bf
+  name: All Committers are CLA Signers
+- color: fc2929
+  name: bug
+- color: ededed
+  name: cool
+- color: ededed
+  name: coolness
+- color: cccccc
+  name: duplicate
+- color: 84b6eb
+  name: enhancement
+- color: e6e6e6
+  name: invalid
+- color: ededed
+  name: LGPA
+- color: ededed
+  name: Long-running
+- color: ededed
+  name: ohai
+- color: cc317c
+  name: question
+- color: 8ED41E
+  name: Signed CLA
+- color: ffffff
+  name: wontfix

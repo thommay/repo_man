@@ -3,7 +3,7 @@
 require "optparse"
 require "netrc"
 require "octokit"
-require "toml"
+require "yaml"
 require "pp"
 require "faraday-http-cache"
 require "tty-spinner"
@@ -204,7 +204,7 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-config = TOML.load_file(opt_hash["config"])
+config = YAML.load_file(opt_hash["config"])
 repos(config).each do |repo|
   unless config["label"].nil?
     config["label"].each do |label|

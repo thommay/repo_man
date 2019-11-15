@@ -1,0 +1,15 @@
+---
+repositories:
+- example/fox
+- example/wolf
+label:
+- name: bug
+  color: f29513
+  mappings:
+  - defect
+  - error
+- name: Jump In
+  color: '123456'
+milestone:
+- name: Accepted Major
+  description: Bucket for breaking changes to pull for next Major

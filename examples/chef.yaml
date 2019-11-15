@@ -1,0 +1,354 @@
+---
+organizations:
+  type: public
+  orgs:
+  - chef-cookbooks
+  - chef
+  - chef-partners
+  blacklist:
+  - chef/chef-community-slack-meetings
+  - chef/chef-rfc
+  - chef/community-summits
+  - chef/devops-kungfu
+  - chef/dmidecode_collection
+  - chef/os_release
+label:
+- name: 'Aspect: Correctness'
+  color: d4c5f9
+  description: Does the implementation match the specification?
+- name: 'Aspect: Documentation'
+  color: d4c5f9
+  mappings:
+  - Documentation
+  - documentation
+  - 'Type: Documentation'
+  - Docs
+  description: How do we use this project?
+- name: 'Aspect: Integration'
+  color: d4c5f9
+  description: Works correctly with other projects or systems.
+- name: 'Aspect: Packaging'
+  color: d4c5f9
+  mappings:
+  - 'Area: Packaging'
+  description: Distribution of the projects 'compiled' artifacts.
+- name: 'Aspect: Performance'
+  color: d4c5f9
+  mappings:
+  - 'Type: Performance'
+  - performance
+  - 'Aspect: Scalability'
+  description: Works without negatively affecting the system running it.
+- name: 'Aspect: Portability'
+  color: d4c5f9
+  description: Does this project work correctly on the specified platform?
+- name: 'Aspect: Security'
+  color: d4c5f9
+  mappings:
+  - Security
+  description: Can an unwanted third party affect the stability or look at privileged
+    information?
+- name: 'Aspect: Stability'
+  color: d4c5f9
+  description: Consistent results.
+- name: 'Aspect: Testing'
+  color: d4c5f9
+  description: Does the project have good coverage, and is CI working?
+- name: 'Aspect: UI'
+  color: d4c5f9
+  description: How users interact with the interface of the project, with a focus
+    on interaction and visual design.
+- name: 'Aspect: UX'
+  color: d4c5f9
+  description: How users feel interacting with the project, focusing on function,
+    ease-of-use and accessibility.
+- name: 'Expeditor: Skip All'
+  color: bfd4f2
+  description: Used to skip all merge_actions.
+- name: 'Expeditor: Skip Changelog'
+  color: bfd4f2
+  description: Used to skip built_in:update_changelog.
+  mappings:
+  - 'Meta: Exclude From Changelog'
+  - 'Changelog: Skip Update'
+  - Exclude From Changelog
+  - 'Expeditor: Exclude From Changelog'
+  - No_Changelog
+- name: 'Expeditor: Skip Habitat'
+  description: Used to skip built_in:trigger_habitat_package_build
+  color: bfd4f2
+- name: 'Expeditor: Skip Omnibus'
+  description: Used to skip built_in:trigger_omnibus_release_build
+  color: bfd4f2
+  mappings:
+  - 'Expeditor: Skip Build'
+  - 'Omnibus: Skip Build'
+- name: 'Expeditor: Bump Version Minor'
+  description: Used by github.minor_bump_labels to bump the Minor version number.
+  color: bfd4f2
+  mappings:
+  - 'Expeditor: Bump Minor Version'
+- name: 'Expeditor: Bump Version Major'
+  description: Used by github.major_bump_labels to bump the Major version number.
+  color: bfd4f2
+- name: 'Expeditor: Skip Version Bump'
+  description: Used to skip built_in:bump_version
+  color: bfd4f2
+  mappings:
+  - 'Version: Skip Bump'
+- name: 'Platform: AWS'
+  color: a2c429
+- name: 'Platform: Azure'
+  color: a2c429
+- name: 'Platform: Docker'
+  color: a2c429
+- name: 'Platform: GCP'
+  color: a2c429
+- name: 'Platform: Linux'
+  color: a2c429
+- name: 'Platform: macOS'
+  color: a2c429
+  mappings:
+  - 'Area: Mac'
+- name: 'Platform: RHEL-like'
+  color: a2c429
+  mappings:
+  - 'Area: Enterprise Linux'
+- name: 'Platform: Debian-like'
+  color: a2c429
+  mappings:
+  - 'Area: Ubuntu'
+- name: 'Platform: VMware'
+  color: a2c429
+- name: 'Platform: Unix-like'
+  color: a2c429
+  mappings:
+  - 'Area: SmartOS'
+  - 'Area: Solaris'
+  - 'Area: BSD'
+  - 'Area: AIX'
+- name: 'Platform: Windows'
+  color: a2c429
+  mappings:
+  - 'Area: Windows'
+- name: 'Priority: Critical'
+  color: eb6420
+  mappings:
+  - High Priority
+  - critical
+  - 'Priority: High'
+- name: 'Priority: Medium'
+  color: eb6420
+  mappings:
+  - Medium Priority
+- name: 'Priority: Low'
+  color: eb6420
+  mappings:
+  - Low Priority
+- name: 'Size: XS'
+  description: A PR that changes 0-9 lines, ignoring generated files.
+  mappings:
+  - XS
+  color: '008672'
+- name: 'Size: S'
+  description: A PR that changes 10-29 lines, ignoring generated files.
+  mappings:
+  - S
+  - Small
+  color: '008672'
+- name: 'Size: M'
+  description: A PR that changes 30-99 lines, ignoring generated files.
+  mappings:
+  - M
+  - Medium
+  color: '008672'
+- name: 'Size: L'
+  description: A PR that changes 100-499 lines, ignoring generated files.
+  mappings:
+  - L
+  - Large
+  color: '008672'
+- name: 'Size: XL'
+  description: A PR that changes 500-999 lines, ignoring generated files.
+  mappings:
+  - XL
+  color: '008672'
+- name: 'Size: XXL'
+  description: A PR that changes 1000+ lines, ignoring generated files.
+  mappings:
+  - XXL
+  color: '008672'
+- name: 'Status: Untriaged'
+  description: An issue that has yet to be triaged.
+  mappings:
+  - Review Required
+  - 'Status: Pending Maintainer Review'
+  color: 0052cc
+- name: 'Status: Adopted'
+  description: An issue that is being worked on.
+  color: 0052cc
+  mappings:
+  - 'Status: Pull Request Submitted'
+  - 'Status: Assigned to Team'
+  - Developing
+- name: 'Status: Incomplete'
+  description: A pull request that is not ready to be merged as noted by the author.
+  color: 0052cc
+  mappings:
+  - Incomplete Contribution
+  - in progress
+  - Do Not Merge
+  - do-not-merge
+  - In Progress
+  - 'Status: In Progress'
+  - 'Status: Blocked'
+  - 'Status: On Hold'
+- name: 'Status: Waiting on Contributor'
+  description: A pull request that has unresolved requested actions from the author.
+  color: 0052cc
+- name: 'Status: Good First Issue'
+  description: An issue ready for a new contributor.
+  color: 0052cc
+  mappings:
+  - Easy
+  - hacktoberfest
+  - Hacktoberfest
+  - Jump In
+  - good first issue
+  - 'Type: Jump In'
+  - 'Help: Good First Issue'
+- name: 'Status: Help Wanted'
+  description: An issue that needs help from a contributor.
+  color: 0052cc
+  mappings:
+  - Finish for Merge
+  - 'Status: Finish for Merge'
+  - 'Status: Abandoned'
+  - 'Status: Needs Adoption'
+  - 'Help: Help Wanted'
+  - Help
+  - help wanted
+  - Help Wanted
+- name: 'Status: Sustaining Backlog'
+  description: An issue ideal for the Sustaining Engineering team (or anyone else
+    if they want to adopt it).
+  color: 0052cc
+  mappings:
+  - 'Type: Sustaining Backlog'
+- name: 'Triage: Duplicate'
+  description: Indicates an issue is a duplicate of other open issue.
+  color: f49866
+  mappings:
+  - duplicate
+  - Duplicate
+  - 'Status: Duplicate'
+- name: 'Triage: Declined'
+  description: Indicates an issue that can not or will not be resolved.
+  color: f49866
+  mappings:
+  - wontfix
+  - 'Status: Won''t Fix'
+  - Won't Fix
+  - invalid
+- name: 'Triage: Support'
+  description: Indicates an issue that is a support question and will be redirected
+    to other mediums.
+  color: f49866
+  mappings:
+  - 'Type: Question'
+  - question
+- name: 'Triage: Not Reproducible'
+  description: Indicates an issue can not be reproduced as described.
+  color: f49866
+- name: 'Triage: Confirmed'
+  description: Indicates and issue has been confirmed as described.
+  color: f49866
+  mappings:
+  - Triaged
+  - 'Status: Confirmed'
+- name: 'Triage: Feature Request'
+  description: Indicates an issue requesting new functionality.
+  color: f49866
+  mappings:
+  - Feature Request
+  - 'Type: Feature Request'
+- name: 'Triage: Needs Information'
+  description: Indicates an issue needs more information in order to work on it.
+  color: f49866
+  mappings:
+  - 'Status: Pending Contributor Response'
+  - Waiting for Contributor Response
+  - Waiting
+  - Feedback Requested
+  - waitingresponse
+  - Waiting on Contributor
+  - Waiting on Feedback
+  - Need More Information
+- name: 'Type: Breaking Change'
+  description: Changes the way existing features work in a way that affects users.
+  color: bfe5bf
+- name: 'Type: Bug'
+  description: Doesn't work as expected.
+  color: bfe5bf
+  mappings:
+  - Bug
+  - bug
+  - Bug Fix
+- name: 'Type: Chore'
+  color: bfe5bf
+  description: non-critical maintenance of a project.
+  mappings:
+  - 'Type: Maintenance'
+  - Chore
+- name: 'Type: Deprecation'
+  description: Removal of existing features.
+  color: bfe5bf
+- name: 'Type: Design Proposal'
+  color: bfe5bf
+  description: Community survey of a proposal.
+- name: 'Type: Enhancement'
+  color: bfe5bf
+  description: Adds new functionality.
+  mappings:
+  - Enhancement
+  - enhancement
+  - Improvement
+  - New Feature
+  - Feature
+- name: 'Type: Regression'
+  color: bfe5bf
+  description: It used to work, now it doesn't.
+  mappings:
+  - Regression
+- name: 'Type: Tech Debt'
+  description: Refactoring of code.
+  color: bfe5bf
+  mappings:
+  - Tech Cleanup
+  - Debt
+- name: CLA Verified
+  delete: true
+- name: CLA Needed
+  delete: true
+- name: General
+  delete: true
+- name: office hours
+  delete: true
+- name: Delivery Change Created
+  delete: true
+- name: 'Status: Ready for Merge'
+  delete: true
+- name: Signed CLA
+  delete: true
+- name: Attack List
+  delete: true
+- name: Discussion
+  delete: true
+- name: Needs Action
+  delete: true
+- name: 'Type: Retest for Status'
+  delete: true
+- name: Reviewed
+  delete: true
+- name: investigate
+  delete: true

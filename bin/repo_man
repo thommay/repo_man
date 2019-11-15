@@ -192,6 +192,10 @@ OptionParser.new do |opts|
     opt_hash["verbose"] = true
   end
 
+  opts.on("-y", "--apply", "Apply changes") do
+    opt_hash["apply"] = true
+  end
+
   opts.on("-h", "--help", "Prints this help") do
     puts opts
     exit
@@ -203,6 +207,14 @@ OptionParser.new do |opts|
     abort opts.to_s
   end
 end.parse!
+
+unless opt_hash["apply"] then
+  @github = Object.new
+  def @github.method_missing msg, *args
+    warn "NOT RUNNING: %p(%p)" % [msg, args]
+    true
+  end
+end
 
 config = YAML.load_file(opt_hash["config"])
 repos(config).each do |repo|

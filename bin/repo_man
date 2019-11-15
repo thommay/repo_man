@@ -227,14 +227,25 @@ OptionParser.new do |opts|
 end
 
 unless opt_hash["apply"] then
-  @github = Object.new
-  def @github.method_missing msg, *args
-    warn "NOT RUNNING: %p(%p)" % [msg, args]
-    true
-  end
+  fake = Struct.new(:gh) do
+    def method_missing msg, *args
+      case msg
+      when :labels, :rate_limit, :search_issues, :milestones then
+        gh.send(msg, *args)
+      when /^(update|add|remove|delete|create)/ then
+        true
+      else
+        abort "NO: %p(%p)" % [msg, args]
+      end
+    end
+  end.new github
+
+
+  @github = fake
 end
 
 config = YAML.load_file(opt_hash["config"])
+
 repos(config).each do |repo|
   unless config["label"].nil?
     config["label"].each do |label|

@@ -156,9 +156,10 @@ rescue Octokit::BadGateway => e
   attempts += 1
   retry
 rescue Octokit::TooManyRequests
-  time_until_limit_over = github.rate_limit["resets_in"] + 5 # 5 more to be safe
-  decorator = TTY::Spinner.new("  :spinner GitHub API limit reached! Waiting #{time_until_limit_over} seconds before making the next request", format: :spin)
-  decorator.run { sleep time_until_limit_over }
+  wait = github.rate_limit["resets_in"] + 5 # 5 more to be safe
+  wait = 10 if wait > 10
+  warn "GitHub API limit reached! Waiting #{wait} seconds..."
+  sleep wait
   retry
 end
 

@@ -209,12 +209,22 @@ OptionParser.new do |opts|
     exit
   end
 
+  begin
+    opts.parse!
+  rescue OptionParser::InvalidOption => e
+    puts
+    puts e
+    puts
+    puts opts
+    exit 1
+  end
+
   unless opt_hash["config"]
     puts "No config file provided"
     puts
     abort opts.to_s
   end
-end.parse!
+end
 
 unless opt_hash["apply"] then
   @github = Object.new

@@ -34,6 +34,7 @@ end
 # We'll never rename a label
 # To do mappings, we'll create the new label, and then for each issue
 # with the old label, we'll add the new label, then remove the old one.
+# TODO: refactor to ensure_labels and stop grabbing all the labels every time
 def ensure_label(repository, label)
   mappings = label.fetch("mappings") { [] }
   all = github.labels(repository)
@@ -43,9 +44,13 @@ def ensure_label(repository, label)
     return
   end
 
-  current = all.select { |cur| cur[:name] == label["name"] }.first
+  current = all.find { |cur| cur[:name] == label["name"] }
+
   if current.nil?
-    github.add_label(repository, label["name"], label["color"], description: label["description"])
+    github.add_label(repository,
+                     label["name"],
+                     label["color"],
+                     description: label["description"])
     puts "  Successfully added label"
   else
     unless current[:color] == label["color"]

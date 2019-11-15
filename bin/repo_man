@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+$verbose = false
+
 require "optparse"
 require "netrc"
 require "octokit"
@@ -11,14 +13,18 @@ require "tty-spinner"
 def github
   @github ||= begin
     faraday = Faraday::RackBuilder.new do |builder|
-      builder.use Faraday::HttpCache
+      builder.use Faraday::Request::Retry, exceptions: [Octokit::ServerError]
+      builder.use Octokit::Middleware::FollowRedirects
       builder.use Octokit::Response::RaiseError
+      builder.use Octokit::Response::FeedParser
+      builder.response :logger if $verbose
       builder.adapter Faraday.default_adapter
     end
 
+    Octokit.middleware = faraday
+
     connection = Octokit::Client.new(netrc: true)
     connection.auto_paginate = true
-    connection.middleware = faraday
     connection.per_page = 100
     connection
   end
@@ -189,6 +195,7 @@ OptionParser.new do |opts|
   end
 
   opts.on("-v", "--verbose", "Make repo man verbose") do
+    $verbose = true
     opt_hash["verbose"] = true
   end
 

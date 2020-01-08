@@ -11,11 +11,6 @@ blacklist = ["chef/chef-community-slack-meetings",
 ### Aspects
 
 [[label]]
-name = "Aspect: Correctness"
-color = "d4c5f9"
-description = "Does the implementation match the specification?"
-
-[[label]]
 name = "Aspect: Documentation"
 color = "d4c5f9"
 mappings = ["Documentation", "documentation", "Type: Documentation", "Docs"]
@@ -178,44 +173,6 @@ name = "Priority: Low"
 color = "eb6420"
 mappings = ["Low Priority"]
 
-### Size
-
-[[label]]
-name = "Size: XS"
-description = "A PR that changes 0-9 lines, ignoring generated files."
-mappings = ["XS"]
-color = "008672"
-
-[[label]]
-name = "Size: S"
-description = "A PR that changes 10-29 lines, ignoring generated files."
-mappings = ["S", "Small"]
-color = "008672"
-
-[[label]]
-name = "Size: M"
-description = "A PR that changes 30-99 lines, ignoring generated files."
-mappings = ["M", "Medium"]
-color = "008672"
-
-[[label]]
-name = "Size: L"
-description = "A PR that changes 100-499 lines, ignoring generated files."
-mappings = ["L", "Large"]
-color = "008672"
-
-[[label]]
-name = "Size: XL"
-description = "A PR that changes 500-999 lines, ignoring generated files."
-mappings = ["XL"]
-color = "008672"
-
-[[label]]
-name = "Size: XXL"
-description = "A PR that changes 1000+ lines, ignoring generated files."
-mappings = ["XXL"]
-color = "008672"
-
 ### Status
 
 [[label]]
@@ -353,6 +310,10 @@ mappings = ["Tech Cleanup", "Debt"]
 ### Old labels to delete
 
 [[label]]
+name = "Aspect: Correctness" # turns out this didn't make sense to apply to every PR / issue
+delete = true
+
+[[label]]
 name = "CLA Verified"
 delete = true
 
@@ -402,4 +363,28 @@ delete = true
 
 [[label]]
 name = "investigate"
+delete = true
+
+[[label]]
+name = "Size: XS"
+delete = true
+
+[[label]]
+name = "Size: S"
+delete = true
+
+[[label]]
+name = "Size: M"
+delete = true
+
+[[label]]
+name = "Size: L"
+delete = true
+
+[[label]]
+name = "Size: XL"
+delete = true
+
+[[label]]
+name = "Size: XXL"
 delete = true

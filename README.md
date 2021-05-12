@@ -2,7 +2,7 @@ Repo Man
 ============
 
 A utility for ensuring that a GitHub repository has the correct set of
-labels and milestones. 
+labels and milestones.
 The owner can create a toml file to configure a list of labels and
 milestones, and a list of mappings to rename older labels correctly.
 
@@ -77,4 +77,3 @@ To apply a config file to a repository, run
 ```
 bundle exec bin/repo_man -c config.toml
 ```
-

@@ -6,7 +6,10 @@ blacklist = ["chef/chef-community-slack-meetings",
              "chef/community-summits",
              "chef/devops-kungfu",
              "chef/dmidecode_collection",
-             "chef/os_release"]
+             "chef/os_release",
+             "chef/automate",
+             "chef/.github",
+             "chef-cookbooks/.github"]
 
 ### Aspects
 
@@ -143,6 +146,10 @@ color = "a2c429"
 mappings = ["Area: Ubuntu"]
 
 [[label]]
+name = "Platform: SLES-like"
+color = "a2c429"
+
+[[label]]
 name = "Platform: VMware"
 color = "a2c429"
 
@@ -269,7 +276,7 @@ color = "bfe5bf"
 
 [[label]]
 name = "Type: Bug"
-description = "Doesn't work as expected."
+description = "Does not work as expected."
 color = "bfe5bf"
 mappings = [ "Bug", "bug", "Bug Fix" ]
 
